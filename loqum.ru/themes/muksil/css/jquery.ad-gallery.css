@@ -1,0 +1,185 @@
+/**
+ * Copyright (c) 2012 Anders Ekdahl (http://coffeescripter.com/)
+ * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *
+ * Version: 1.2.7
+ *
+ * Demo and documentation: http://coffeescripter.com/code/ad-gallery/
+ */
+.ad-gallery {
+  width: 300px;
+}
+.ad-gallery, .ad-gallery * {
+  margin: 0;
+  padding: 0;
+}
+  .ad-gallery .ad-image-wrapper {
+    width: 100%;
+    height: 375px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+    .ad-gallery .ad-image-wrapper .ad-loader {
+      position: absolute;
+      z-index: 10;
+      top: 48%;
+      left: 48%;
+      border: 1px solid #CCC;
+    }
+    .ad-gallery .ad-image-wrapper .ad-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+
+
+    }
+    .ad-gallery .ad-image-wrapper .ad-image {
+      position: absolute;
+      overflow: hidden;
+      top: 0 !important;
+      left: 0;
+      z-index: 9;
+    }
+      .ad-gallery .ad-image-wrapper .ad-image a img {
+        border: 0;
+      }
+      .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 7px;
+        text-align: left;
+        width: 100%;
+        z-index: 2;
+        background: url(opa75.png);
+        color: #000;
+      }
+      * html .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        background: none;
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png');
+      }
+        .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title {
+          display: block;
+        }
+  .ad-gallery .ad-controls {
+    height: 20px;
+  }
+    .ad-gallery .ad-info {
+      float: left;
+    }
+    .ad-gallery .ad-slideshow-controls {
+      float: right;
+    }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-start, .ad-gallery .ad-slideshow-controls .ad-slideshow-stop {
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-countdown {
+        padding-left: 5px;
+        font-size: 0.9em;
+      }
+    .ad-gallery .ad-slideshow-running .ad-slideshow-start {
+      cursor: default;
+      font-style: italic;
+    }
+  .ad-gallery .ad-nav {
+    width: 100%;
+    position: relative;
+  }
+    .ad-gallery .ad-forward, .ad-gallery .ad-back {
+        position: absolute;
+        z-index: 1000;
+        bottom: 0;
+        display: block;
+        text-decoration: none !important;
+        font-size: 14px;
+        height: 30px !important;
+        line-height: 23px;
+        color: #06528C;
+        width: 70px;
+        text-align: center;
+        background: #CCE1F2;
+        background: url(../images/sl-arr.jpg) no-repeat;
+        cursor: pointer;
+      }
+      
+    }
+    /* IE 6 doesn't like height: 100% */
+    * html .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      height: 100px;
+    }
+    .ad-gallery .ad-back{
+      background-position: left top;
+      background: url(../images/sl-arr.jpg) left top no-repeat;
+      left: 74px;
+    }
+    .ad-gallery .ad-forward {
+      background-position: right top;
+      right: 74px;
+    }
+
+    .ad-gallery .ad-back:hover{
+      background-position: left bottom;
+    } 
+
+    .ad-gallery .ad-forward:hover{
+      background-position: right bottom;
+    }
+    .ad-gallery .ad-nav .ad-thumbs {
+      overflow: hidden;
+      height: 147px;
+      width: 100%;   
+      z-index: 1;
+      position: relative;   
+    }
+      .ad-gallery .ad-thumbs .ad-thumb-list {
+        float: left;
+        width: 9000px;
+        list-style: none;
+      }
+        .ad-gallery .ad-thumbs li {
+          float: left;
+          padding-right: 18px;
+        }
+          .ad-gallery .ad-thumbs li a {
+            display: block;
+          }
+            .ad-gallery .ad-thumbs li a img {              
+              display: block;
+            }
+            .ad-gallery .ad-thumbs li a.ad-active img {              
+            }
+/* Can't do display none, since Opera won't load the images then */
+.ad-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
+
+.shadow{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 101px;
+  background: url(../images/fade.png) right top repeat-y;
+  width: 45px;
+  z-index: 100;
+}

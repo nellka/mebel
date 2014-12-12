@@ -1,0 +1,49 @@
+
+#adminmenu
+{
+	background:white url(bg.gif) repeat-x left top;
+    position:absolute;
+    top:-10px;
+}
+
+#adminmenu ul
+{
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+
+#adminmenu ul li
+{
+	display: inline;
+}
+
+#adminmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+
+#adminmenu ul li a:hover, #adminmenu ul li.active a
+{
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+}
+
+#anketa-grid .image-column img {
+    max-width:200px;
+    max-height:200px;
+}
+.button-column img {width:20px;margin-bottom:5px;}
+.red {color:red;}
+.green {color:green;}
+.brown {color:brown;}
+.status_bad {text-transform: uppercase; font-weight: bold;}
+form.fingerprint-ban-form {display:block;}
+#city-grid .button-column  {
+    width:70px;
+}
