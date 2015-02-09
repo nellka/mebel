@@ -1,0 +1,220 @@
+html {
+	/* background-image: url('http://www.dikiy.ru/D/1.jpg'); */
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+}
+
+h1 {
+	font-family: Arial, sans-serif;
+	font-size: 16pt;
+	font-weight: bold;
+	color: #000000;
+	border-bottom: solid 4px #000000;
+}
+
+h2 {
+	font-family: Arial, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #000000;
+	border-bottom: solid 2px #000000;
+	margin-bottom: 8px;
+}
+div {
+	font-family: 'Ubuntu', sans-serif;
+}
+fieldset {
+	border: solid 1px #666666;
+	width: 590px;
+	padding: 4px 4px 4px 4px;
+	margin-bottom: 15px;
+}
+
+legend {
+	text-shadow: 0 0 1px gray;
+	color: #ffffff;
+	background: #336633;
+	border: 1px outset #cccccc;
+	padding: 2px 2px 2px 2px;
+	font-weight: bold;
+}
+
+label {
+	font-family: 'Ubuntu', sans-serif;
+	width: 90px;
+	float: left;
+	margin: 2px 0 2px 0;
+	text-align: right;
+	vertical-align: top;
+}
+#wrapper {
+	margin: 0 auto;
+	padding: 5px;
+	width: 870px;
+/*     background-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5); */
+	background: url("bg_guest.png");
+}
+#comments {
+	resize: vertical;
+	overflow: auto;
+}
+#post_new {
+    margin: 0 auto;
+    width: 600px;
+}
+#post_new fieldset {
+	border: 2px solid white;
+	box-shadow: 0 0 15px 5px white;
+	width: 490px;
+	background-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+}
+#post_new_link {
+	font-size: 15px;
+}
+.inputText, .inputTextArea {
+	margin: 2px 0 2px 5px;
+	vertical-align: top;
+}
+
+.challengeImage {
+	margin: 2px 0 2px 0;
+	vertical-align: top;
+}
+
+select {
+	margin: 2px 0px 2px 5px;
+}
+
+input.submit {
+/* 	color: #000000;
+	background: #99cc99;
+	border: 2px outset #cccccc;
+	width: 120px; */
+}
+
+.credit {
+	padding-top: 4px;
+	margin-top: 8px;
+	border-top: solid 1px #999999;
+	clear: both;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	color: #303030;
+}
+
+.errorMessage {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 10pt;
+	color: #ff0000;
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+	background: transparent;
+}
+
+a:link {
+	color: #0000ff;
+}
+
+a:visited {
+	color: #990099;
+}
+
+a:active {
+	color: #ff0000;
+}
+
+a:link:hover, a:visited:hover, a:active:hover {
+	color: #ff0000;
+}
+
+.entry {
+	margin: 0 0 5px 0;
+	padding: 0 0 4px 0;
+	border-bottom: solid 1px #9E9E9E;
+	clear: both;
+}
+
+#lastEntry, #onlyEntry {
+	border-bottom: none;
+}
+
+.entry .field, .timestamp {
+	margin: 0 0 0 0;
+	padding: 2px 0 2px 0;
+	clear: both;
+}
+
+.entry .field .label {
+	float: left;
+	width: 100px;
+	margin: 0 6px 0 0;
+	padding: 0 0 0 0;
+	text-align: right;
+	display: inline;
+	font-weight: bold;
+}
+
+.entry .field .value {
+	float: left;
+	/* width: 494px; */
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	display: inline;
+	max-width: 750px;
+}
+
+.timestamp {
+	margin: 0 0 4px 106px;
+	padding: 8px 0 0 0;
+	clear: both;
+}
+
+.navigation {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#previous {
+	font-size: 12pt;
+	margin-right: 30px;
+	display: inline;
+}
+
+#next {
+	font-size: 12pt;
+	margin-left: 30px;
+    display: inline;
+}
+
+.pageNumberContainer {
+	display: inline;
+	text-align: center;
+}
+
+.pageNumber {
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#currentPageNumber {
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.entryCount {
+	text-align: center;
+	padding-bottom: 4px;
+	margin-top: 8px;
+}

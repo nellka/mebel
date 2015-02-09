@@ -1,0 +1,778 @@
+	<link href='lib/css/jplayer.premium-pixels/premium-pixels.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="lib/js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="lib/js/jplayer.playlist.min.js"></script>
+	<script type="text/javascript" src="lib/js/jquery.waituntilexists.js"></script>
+	
+	<style>
+	div.album {
+		width: 920px;
+		border-radius: 5px;
+		display: block;
+		background-color: #BFBFBF;
+		margin: 5px;
+		padding: 5px 5px 15px 5px;
+	}
+	div.album span.title {
+		text-align: center;
+		display: block;
+		font-size: 23px;
+		margin-bottom: 15px;
+	}
+	div.album div.player, div.album div.info, div.album div.images {
+		display: inline-block;
+		font-size: 17px;
+		vertical-align: top;
+	}
+	div.album div.player {
+		width: 280px;
+	}
+	div.album div.info {
+		width: 200px;
+		margin-left: 20px;
+	}
+	div.album div.images {
+		width: 385px;
+		margin-left: 10px;
+	}
+	div.album div.images img {
+		width: 180px;
+		height: 180px;
+	}
+	div.album.songs div.player {
+		width: 900px;
+	}
+	</style>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_0",
+				cssSelectorAncestor: "#jp_container_0"
+			}, [
+				{
+					title:"Сергей Дикий и Оксана Башинская - Эфир передачи \"Добрые Нравы\" от 29 июля 2012.",
+					mp3:"./lib/mp3/Dobrye_Nravy_29.07.2012.mp3",
+					free:false
+				},
+				{
+					title:"Сергей Дикий - Ноябрь",
+					mp3:"./lib/mp3/S.Dikiy - Noyabr.mp3",
+					free:false
+				},
+				{
+					title:"Сергей Дикий и Оксана Башинская - Осень",
+					mp3:"./lib/mp3/Sergej Dikij i Oksana Bashinskaja - Osen.mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});		
+				
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_1",
+				cssSelectorAncestor: "#jp_container_1"
+			}, [
+				{
+					title:"Лесоповал",
+					mp3:"./lib/mp3/mp3_1_(1).mp3",
+					free:false
+				},
+				{
+					title:"Первая девочка",
+					mp3:"./lib/mp3/mp3_1_(2).mp3",
+					free:false
+				},
+				{
+					title:"Заповедь",
+					mp3:"./lib/mp3/mp3_1_(3).mp3",
+					free:false
+				},
+				{
+					title:"Три татуировочки",
+					mp3:"./lib/mp3/mp3_1_(4).mp3",
+					free:false
+				},
+				{
+					title:"Сентиментальный вальс",
+					mp3:"./lib/mp3/mp3_1_(5).mp3",
+					free:false
+				},
+				{
+					title:"Стамбул",
+					mp3:"./lib/mp3/mp3_1_(6).mp3",
+					free:false
+				},
+				{
+					title:"Попурри",
+					mp3:"./lib/mp3/mp3_1_(7).mp3",
+					free:false
+				},
+				{
+					title:"А белый лебедь на пруду...",
+					mp3:"./lib/mp3/mp3_1_(8).mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});		
+			
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_2",
+				cssSelectorAncestor: "#jp_container_2"
+			}, [
+				{
+					title:"Вместе",
+					mp3:"./lib/mp3/b01.mp3",
+					free:false
+				},
+				{
+					title:"Чао, сеньора",
+					mp3:"./lib/mp3/b02.mp3",
+					free:false
+				},
+				{
+					title:"Белая песня",
+					mp3:"./lib/mp3/b03.mp3",
+					free:false
+				},
+				{
+					title:"На Гавайи",
+					mp3:"./lib/mp3/b04.mp3",
+					free:false
+				},
+				{
+					title:"Голуби",
+					mp3:"./lib/mp3/b05.mp3",
+					free:false
+				},
+				{
+					title:"Девочка моя",
+					mp3:"./lib/mp3/b06.mp3",
+					free:false
+				},
+				{
+					title:"Смотри",
+					mp3:"./lib/mp3/b07.mp3",
+					free:false
+				},
+				{
+					title:"Фотопортрет",
+					mp3:"./lib/mp3/b08.mp3",
+					free:false
+				},
+				{
+					title:"Кристина",
+					mp3:"./lib/mp3/b09.mp3",
+					free:false
+				},
+				{
+					title:"832",
+					mp3:"./lib/mp3/b10.mp3",
+					free:false
+				},
+				{
+					title:"Крутится-вертится",
+					mp3:"./lib/mp3/b11.mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});
+	
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_3",
+				cssSelectorAncestor: "#jp_container_3"
+			}, [
+				{
+					title:"Тебя проклятую",
+					mp3:"./lib/mp3/k01.mp3",
+					free:false
+				},
+				{
+					title:"Обручальное кольцо",
+					mp3:"./lib/mp3/k02.mp3",
+					free:false
+				},
+				{
+					title:"Когда рассеется туман",
+					mp3:"./lib/mp3/k03.mp3",
+					free:false
+				},
+				{
+					title:"Погоня",
+					mp3:"./lib/mp3/k04.mp3",
+					free:false
+				},
+				{
+					title:"Только в мае",
+					mp3:"./lib/mp3/k05.mp3",
+					free:false
+				},
+				{
+					title:"Надежда",
+					mp3:"./lib/mp3/k06.mp3",
+					free:false
+				},
+				{
+					title:"Колыбельная",
+					mp3:"./lib/mp3/k07.mp3",
+					free:false
+				},
+				{
+					title:"Прощальный тост",
+					mp3:"./lib/mp3/k08.mp3",
+					free:false
+				},
+				{
+					title:"Я ждал",
+					mp3:"./lib/mp3/k09.mp3",
+					free:false
+				},
+				{
+					title:"Миллион алых роз",
+					mp3:"./lib/mp3/k10.mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});	
+		
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_4",
+				cssSelectorAncestor: "#jp_container_4"
+			}, [
+				{
+					title:"Подожди",
+					mp3:"./lib/mp3/p01.mp3",
+					free:false
+				},
+				{
+					title:"Хочется обнять",
+					mp3:"./lib/mp3/p02.mp3",
+					free:false
+				},
+				{
+					title:"Кораблик",
+					mp3:"./lib/mp3/p03.mp3",
+					free:false
+				},
+				{
+					title:"Белая шаль",
+					mp3:"./lib/mp3/p04.mp3",
+					free:false
+				},
+				{
+					title:"Незнакомка",
+					mp3:"./lib/mp3/p05.mp3",
+					free:false
+				},
+				{
+					title:"Обнимала не любила",
+					mp3:"./lib/mp3/p06.mp3",
+					free:false
+				},
+				{
+					title:"Улечу",
+					mp3:"./lib/mp3/p07.mp3",
+					free:false
+				},
+				{
+					title:"Одиночество",
+					mp3:"./lib/mp3/p08.mp3",
+					free:false
+				},
+				{
+					title:"Милёна",
+					mp3:"./lib/mp3/p09.mp3",
+					free:false
+				},
+				{
+					title:"Яблоко",
+					mp3:"./lib/mp3/p10.mp3",
+					free:false
+				},
+				{
+					title:"Перемены",
+					mp3:"./lib/mp3/p11.mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});
+		
+		new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_5",
+				cssSelectorAncestor: "#jp_container_5"
+			}, [
+				{
+					title:"Гитара",
+					mp3:"./lib/mp3/j01.mp3",
+					free:false
+				},
+				{
+					title:"Не боли душа!",
+					mp3:"./lib/mp3/j02.mp3",
+					free:false
+				},
+				{
+					title:"Женщина осень",
+					mp3:"./lib/mp3/j03.mp3",
+					free:false
+				},
+				{
+					title:"Капитан",
+					mp3:"./lib/mp3/j04.mp3",
+					free:false
+				},
+				{
+					title:"Сёма Шмуль",
+					mp3:"./lib/mp3/j05.mp3",
+					free:false
+				},
+				{
+					title:"Табор",
+					mp3:"./lib/mp3/j06.mp3",
+					free:false
+				},
+				{
+					title:"Письмо",
+					mp3:"./lib/mp3/j07.mp3",
+					free:false
+				},
+				{
+					title:"Гарсон",
+					mp3:"./lib/mp3/j08.mp3",
+					free:false
+				},
+				{
+					title:"Королева с бассетом",
+					mp3:"./lib/mp3/j09.mp3",
+					free:false
+				},
+				{
+					title:"Огни Москвы",
+					mp3:"./lib/mp3/j10.mp3",
+					free:false
+				},
+				{
+					title:"Таёжная баллада",
+					mp3:"./lib/mp3/j11.mp3",
+					free:false
+				},
+				{
+					title:"Уходи",
+					mp3:"./lib/mp3/j12.mp3",
+					free:false
+				}
+		], {
+			swfPath: "js",
+			supplied: "mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});
+	});
+	</script>
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="album songs">
+			<h2 style="text-align: center;">Композиции Сергея Дикого теперь можно приобрести в популярных интернет-магазинах:</h2>
+			<h3 style="text-align: center;"><a href="https://itunes.apple.com/ru/artist/sergej-dikij/id905943137">iTunes</a></h3>
+			<h3 style="text-align: center;"><a href="https://play.google.com/store/music/artist/%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%94%D0%B8%D0%BA%D0%B8%D0%B9?id=A3dqmast3qe6qgkbffx5pvodl6q">Google Music</a></h3>
+			
+			</div>
+			<div class="album songs">
+				<span class="title">Разное</span>
+				<div class="player">
+					<div id="jquery_jplayer_0" class="jp-jplayer"></div>
+					<div id="jp_container_0" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+			
+			
+			<div class="album">
+				<span class="title">Лесоповал. Из прошлого.</span>
+				<div class="player">
+					<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+					<div id="jp_container_1" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="info">
+				</div>
+				<div class="images">
+					<a target="_blank" href="lib/img/albums/mp3_1.jpg"><img src="lib/img/albums/mp3_1s.jpg" alt="" /></a>
+					<a target="_blank" href="lib/img/albums/mp3_1.jpg"><img src="lib/img/albums/mp3_2s.jpg" alt="" /></a>
+				</div>
+			</div>
+			<br />
+			<div class="album">
+				<span class="title">«Белый»</span>
+				<div class="player">
+					<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+					<div id="jp_container_2" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="info">
+					® 2001  "Grand records"<br />
+					Аранжировка:<br />
+					Михаил Савин,<br />
+					кроме (8) и (10):<br />
+					Марс Гафаров<br />
+					Гитара: Игорь Бойко
+				</div>
+				<div class="images">
+					<a target="_blank" href="lib/img/albums/B1b.gif"><img src="lib/img/albums/B1.gif" alt="" /></a>
+					<a target="_blank" href="lib/img/albums/B2b.jpg"><img src="lib/img/albums/B2.gif" alt="" /></a>
+				</div>
+			</div>
+			<br />
+			<div class="album">
+				<span class="title">«Когда рассеется туман...»</span>
+				<div class="player">
+					<div id="jquery_jplayer_3" class="jp-jplayer"></div>
+					<div id="jp_container_3" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="info">
+					® 1998  "Союз"<br />
+					Аранжировка:<br />
+					Т. Ващинин (1,2,4,6-9),<br />
+					А. Федорков (3,5)<br />
+					Сопрано-саксофон:<br />
+					О. Топуридзе (9)<br />
+					Тенор-саксофон:<br />
+					М. Савин (2,3,8)<br />
+					Ударные: Артур Мечль<br />
+					Бэк-вокал: Маримьяна(9)<br />
+					Саунд-продюсер: Язнур Гарипов.
+				</div>
+				<div class="images">
+					<a target="_blank" href="lib/img/albums/K1b.jpg"><img src="lib/img/albums/K1.gif" alt="" /></a>
+					<a target="_blank" href="lib/img/albums/K2b.gif"><img src="lib/img/albums/K2.gif" alt="" /></a>
+				</div>
+			</div>
+			<br />
+			<div class="album">
+				<span class="title">«Подожди»</span>
+				<div class="player">
+					<div id="jquery_jplayer_4" class="jp-jplayer"></div>
+					<div id="jp_container_4" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="info">		
+					® 1998 "Союз Продакшн"<br />
+					Аранжировка, труба,<br />
+					аккордеон: А. Федорков.<br />
+					Гитара, запись, микширование:<br />
+					Язнур Гарипов.<br />
+					Продюсеры альбома:<br />
+					Вячеслав Клеменков,<br />
+					Язнур Гарипов.
+				</div>
+				<div class="images">
+					<a target="_blank" href="lib/img/albums/P1b.jpg"><img src="lib/img/albums/P1.gif" alt="" /></a>
+					<a target="_blank" href="lib/img/albums/P2b.gif"><img src="lib/img/albums/P2.jpg" alt="" /></a>
+				</div>
+			</div>
+			<br />
+			<div class="album">
+				<span class="title">«Женщина-осень»</span>
+				<div class="player">
+					<div id="jquery_jplayer_5" class="jp-jplayer"></div>
+					<div id="jp_container_5" class="jp-audio" style="width: 268px;">
+						<div class="jp-type-playlist">
+							<div class="jp-gui jp-interface">
+								<ul class="jp-controls">
+									<li><a href="#" class="jp-previous" tabindex="1">previous</a></li>
+									<li><a href="#" class="jp-play" tabindex="1">play</a></li>
+									<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+									<li><a href="#" class="jp-next" tabindex="1">next</a></li>
+									<li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+									<li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									<li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+								</ul>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+								<div class="jp-time-holder">
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+								</div>
+								<ul class="jp-toggles">
+									<li><a href="#" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+									<li><a href="#" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+									<li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									<li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+								</ul>
+							</div>
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="info">
+					® 1996  "Master Sound"<br />
+					Скрипка: Фарик Карамов<br />
+					Труба: А. Федорков.<br />
+					Сопрано-сакс: М. Савин.<br />
+					Гитара: Язнур Гарипов.<br />
+					Бэк-вокал: А. Демьянова, Ляля Шишкова, Земфира Вербицкая.<br />
+					Вячеслав Клеменков,<br />
+					Язнур Гарипов.
+				</div>
+				<div class="images">
+					<a target="_blank" href="lib/img/albums/J1b.jpg"><img src="lib/img/albums/J1.gif" alt="" /></a>
+					<a target="_blank" href="lib/img/albums/J2b.jpg"><img src="lib/img/albums/J2.jpg" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		used = false;
+		$(".jp-type-playlist .jp-playlist ul li div span a").waitUntilExists(function() {
+			if (!used) {
+				used = true;
+				$(".jp-type-playlist .jp-playlist ul li div span a").on( "click", function() {
+					window.open($(this).prop('href'), '_blank');
+				});
+			}
+		}, true);
+	});
+</script>

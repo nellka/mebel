@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
+RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
+RewriteRule ^photo/(.*)$ /?фотоальбом [R=301,NC,L]
+RewriteRule ^video/(.*)$ /?видео [R=301,NC,L]
+RewriteRule ^guest/(.*)$ /?гостевая [R=301,NC,L]
+RewriteRule ^index.htm / [R=301,NC,L]
+RewriteRule ^info.htm /?биография [R=301,NC,L]
+RewriteRule ^disc.htm /?музыка [R=301,NC,L]
+RewriteRule ^songs.htm /?музыка [R=301,NC,L]

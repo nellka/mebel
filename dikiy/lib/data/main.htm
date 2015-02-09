@@ -1,0 +1,206 @@
+	<link href='lib/css/jplayer.premium-pixels/premium-pixels.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="lib/js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="lib/js/jplayer.playlist.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){		
+			new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_1",
+				cssSelectorAncestor: "#jp_container_1"
+			}, [
+			{
+				title:"С чего начинается Родина?",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - С чего.mp3",
+				free:false
+			},
+			{
+				title:"Последний бой",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Последний бой.mp3",
+				free:false
+			},
+			{
+				title:"Давай закурим",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Давай закурим.mp3",
+				free:false
+			},
+			{
+				title:"Казаки в Берлине",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Казаки.mp3",
+				free:false
+			},
+			{
+				title:"Тёмная ночь",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Тёмная ночь.mp3",
+				free:false
+			}
+		], {
+			swfPath: "js",
+			supplied: "oga, mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});
+	});
+		$(document).ready(function(){		
+			new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_2",
+				cssSelectorAncestor: "#jp_container_2"
+			}, [
+			{
+				title:"Песенка военных корреспондентов",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - От Москвы до Бреста.mp3",
+				free:false
+			},
+			{
+				title:"В землянке",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - В землянке.mp3",
+				free:false
+			},
+			{
+				title:"Первым делом самолёты",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Пилоты.mp3",
+				free:false
+			},
+			{
+				title:"Журавли",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Журавли.mp3",
+				free:false
+			},
+			{
+				title:"Эх, путь-дорожка!",
+				mp3:"http://dikiy.ru/lib/mp3/pobeda/Сергей Дикий - Шоферская.mp3",
+				free:false
+			}
+		], {
+			swfPath: "js",
+			supplied: "oga, mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});
+	});
+	</script>
+	
+	<div class="banner">
+		<div class="topblock">
+			<span class="heading">
+				<a style="color: white;" href="/?лесоповал">Лесоповал 90-х</a>
+			</span>
+				<a href="/?лесоповал"><img src="/lib/img/lesopoval/lesopoval_sm.jpg" alt="lesopoval" style="width: 345px;" /></a>
+		</div>
+		<div class="topblock" style="width: 415px;">
+			<span class="heading">
+				Друзья,<br /> рад приветствовать вас на страницах своего сайта!
+			</span>
+			<span>	
+				Буду искренне рад пообщаться с вами в своей гостевой книге. Спасибо всем вам!<br /><br />
+				E-mail: <a style="text-decoration: none; color: #457DFF;" href="mailto:sergey_dikiy@mail.ru">sergey_dikiy@mail.ru</a><br />
+				По организации концертов:  <span style="color: #457DFF;" >+7(925) 007-3444</span><br />
+			</span><br />
+			<a target="_blank" href="https://www.facebook.com/sergey.diky.1"><img src="lib/img/fb.png" alt="fb" /></a>
+			<a target="_blank" href="http://vk.com/id4833480"><img src="lib/img/vk.png" alt="vk" /></a></a>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="container">
+		<div style="width: 100%;height:150px">
+			<div style="width:510px;float: left">
+				<h3 style="color: #b05b00;    font-family: georgia;    font-size: 18px;    font-weight: normal;    line-height: 20px;  text-align: right;"> <i>Склоняю голову перед бессметным Подвигом Солдата Великой Отечественной
+	Войны.<br>
+	      Низкий поклон всем тем, кому мы все обязаны нашей мирной жизнью!</i></h3>
+			<h3 style="text-align: right; color: #B05B00; font-size: 32px;">Песни Победы</h3>
+			</div>
+			<div style="width:500px;float: right">
+			<img alt="70-Летие великой победы" src="/lib/img/70-win.jpg">
+			</div>
+		</div>
+		<div style="clear:both"></div>
+		<div>
+		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+		<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+			<div id="jp_container_1" class="jp-audio" style="width: 49%; display: inline-block;vertical-align: top;">
+				<div class="jp-type-playlist">
+					<div class="jp-gui jp-interface">
+						<ul class="jp-controls">
+							<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+							<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+							<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+							<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+							<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+							<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+							<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+							<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+						</ul>
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+						<div class="jp-time-holder">
+							<div class="jp-current-time"></div>
+							<div class="jp-duration"></div>
+						</div>
+						<ul class="jp-toggles">
+							<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+							<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+							<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+							<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+						</ul>
+					</div>
+					<div class="jp-playlist">
+						<ul>
+							<li></li>
+						</ul>
+					</div>
+					<div class="jp-no-solution">
+						Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+					</div>
+				</div>
+			</div>
+			<div id="jp_container_2" class="jp-audio" style="width: 49%; display: inline-block;vertical-align: top;">
+				<div class="jp-type-playlist">
+					<div class="jp-gui jp-interface">
+						<ul class="jp-controls">
+							<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+							<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+							<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+							<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+							<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+							<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+							<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+							<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+						</ul>
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+						<div class="jp-time-holder">
+							<div class="jp-current-time"></div>
+							<div class="jp-duration"></div>
+						</div>
+						<ul class="jp-toggles">
+							<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+							<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+							<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+							<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+						</ul>
+					</div>
+					<div class="jp-playlist">
+						<ul>
+							<li></li>
+						</ul>
+					</div>
+					<div class="jp-no-solution">
+						Вам необходимо обновить свою версию <a href="http://get.adobe.com/flashplayer/" target="_blank">flash-плеера</a>.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+			<div>

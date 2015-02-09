@@ -1,0 +1,12 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#fulscreen_frame").css({"height": ($(window).height() - 145) + "px"});
+	
+	$(window).resize(function() {
+		$("#fulscreen_frame").css({"height": ($(window).height() - 145) + "px"});
+	});
+});
+</script>
+
+
+<iframe id="fulscreen_frame" scrolling="yes" frameborder="0" src="lib/guestbook/"></iframe>
