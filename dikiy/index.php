@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+
 
 include('functions.php');
 
@@ -7,6 +7,7 @@ require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
 $isMobile = $detect->isMobile() ? true : false;
+$mod = $_REQUEST['mod'];
 
 $mHome = 1;
 $mBio = 2;
@@ -22,49 +23,49 @@ $pageActiveMenu = 0;
 $desc = "Сергей Дикий - Официальный Сайт";
 $pageContent = "";
 
-if (isset($_GET['биография'])) 
+if (isset($_GET['биография'])||$mod=='biography'||$mod=='биография') 
 {
 	$pageTitle = "Биография - Сергей Дикий";
 	$pageActiveMenu = $mBio;
 	$pageContent = file_get_contents("lib/data/bio.htm");
 	$desc = $pageTitle;
 }
-elseif (isset($_GET['фотоальбом'])) 
+elseif (isset($_GET['фотоальбом'])||$mod=='фотоальбом'||$mod=='photo') 
 {
 	$pageTitle = "Фотоальбом - Сергей Дикий";
 	$pageActiveMenu = $mPhoto;
 	$pageContent = file_get_contents("lib/data/photo.htm");
 	$desc = $pageTitle;
 }
-elseif (isset($_GET['музыка'])) 
+elseif (isset($_GET['музыка'])||$mod=='музыка'||$mod=='mymusic') 
 {
 	$pageTitle = "Музыка - Сергей Дикий";
 	$pageActiveMenu = $mMusic;
 	$pageContent = file_get_contents("lib/data/music.htm");
 	$desc = $pageTitle;
 } 
-elseif (isset($_GET['видео'])) 
+elseif (isset($_GET['видео'])||$mod=='видео'||$mod=='myvideo') 
 {
 	$pageTitle = "Видео - Сергей Дикий";
 	$pageActiveMenu = $mVideo;
 	$pageContent = file_get_contents("lib/data/video.htm");
 	$desc = $pageTitle;
 } 
-elseif (isset($_GET['гостевая'])) 
+elseif (isset($_GET['гостевая'])||$mod=='гостевая'||$mod=='guest')
 {
 	$pageTitle = "Гостевая - Сергей Дикий";
 	$pageActiveMenu = $mGuestbook;
 	$pageContent = file_get_contents("lib/data/guest.htm");
 	$desc = $pageTitle;
 } 
-elseif (isset($_GET['афиша'])) 
+elseif (isset($_GET['афиша'])||$mod=='афиша'||$mod=='promo') 
 {
 	$pageTitle = "Афиша - Сергей Дикий";
 	$pageActiveMenu = -1;
 	$pageContent = file_get_contents("lib/data/promo.htm");
 	$desc = $pageTitle;
 }
-elseif (isset($_GET['лесоповал'])||isset($_GET['lesopoval'])) 
+elseif (isset($_GET['лесоповал'])||$mod=='lesopoval'||$mod=='лесоповал') 
 {
 	header('Content-type: text/html; charset=utf-8');
 	$pageTitle = "Лесоповал";
@@ -78,7 +79,7 @@ elseif (isset($_GET['лесоповал'])||isset($_GET['lesopoval']))
 	PrintFooter();
 	die();
 } 
-elseif (isset($_GET['продюсирование'])) 
+elseif (isset($_GET['продюсирование'])||$mod=='продюсирование'||$mod=='production') 
 {
 	$pageTitle = "Продюсирование - Сергей Дикий";
 	$pageActiveMenu = $mProduction;

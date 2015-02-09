@@ -1,11 +1,30 @@
 Options -Indexes
 RewriteEngine On
-RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
-RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
-RewriteRule ^photo/(.*)$ /?фотоальбом [R=301,NC,L]
-RewriteRule ^video/(.*)$ /?видео [R=301,NC,L]
-RewriteRule ^guest/(.*)$ /?гостевая [R=301,NC,L]
-RewriteRule ^index.htm / [R=301,NC,L]
-RewriteRule ^info.htm /?биография [R=301,NC,L]
-RewriteRule ^disc.htm /?музыка [R=301,NC,L]
-RewriteRule ^songs.htm /?музыка [R=301,NC,L]
+
+#RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
+#RewriteRule ^S/(.*)$ /lib/mp3/$1 [R=301,NC,L]
+#RewriteRule ^photo/(.*)$ /?фотоальбом [R=301,NC,L]
+#RewriteRule ^video/(.*)$ /?видео [R=301,NC,L]
+#RewriteRule ^guest/(.*)$ /?гостевая [R=301,NC,L]
+#RewriteRule ^index.htm / [R=301,NC,L]
+#RewriteRule ^info.htm /?биография [R=301,NC,L]
+#RewriteRule ^disc.htm /?музыка [R=301,NC,L]
+#RewriteRule ^songs.htm /?музыка [R=301,NC,L]
+
+
+RewriteRule ^info.htm /biography [R=301,NC,L]
+RewriteRule ^disc.htm /music [R=301,NC,L]
+RewriteRule ^songs.htm index.php?page=music [L]
+
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteCond %{REQUEST_URI} !^/index.htm
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteCond %{REQUEST_URI} !^/lib/css/
+RewriteCond %{REQUEST_URI} !^/lib/js/
+RewriteCond %{REQUEST_URI} !^/lib/img/
+RewriteCond %{REQUEST_URI} !^/lib/mp3/
+RewriteCond %{REQUEST_URI} !^/lib/photo/
+RewriteCond %{REQUEST_URI} !^/lib/guestbook/
+RewriteCond %{REQUEST_URI} !^/lib/video/
+RewriteCond %{REQUEST_URI} !^/lib/docs/
+RewriteRule ^(.*)$ index.php?mod=$1%{QUERY_STRING}  [L]

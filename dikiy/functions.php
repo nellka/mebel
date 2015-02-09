@@ -42,13 +42,13 @@
 			<div class="right">
 				<ul class="menu">  
 					<!--<li><a href="./" <?php if ($menuItem == 1) { echo "class='active'"; }?>>Главная</a></li>-->
-					<li><a href="./?биография" <?php if ($menuItem == 2) { echo "class='active'"; }?>>Биография</a></li>
-					<li><a href="./?фотоальбом" <?php if ($menuItem == 3) { echo "class='active'"; }?>>Фотоальбом</a></li>
-					<li><a href="./?музыка" <?php if ($menuItem == 4) { echo "class='active'"; }?>>Музыка</a></li>
-					<li><a href="./?видео" <?php if ($menuItem == 5) { echo "class='active'"; }?>>Видео</a></li>
-					<li><a href="./?продюсирование" <?php if ($menuItem == 8) { echo "class='active'"; }?>>Продюсирование</a></li>
-					<li><a href="./?афиша" <?php if ($menuItem == 7) { echo "class='active'"; }?>>Организаторам</a></li>
-					<li><a href="./?гостевая" <?php if ($menuItem == 6) { echo "class='active'"; }?>>Гостевая</a></li>
+					<li><a href="/biography" <?php if ($menuItem == 2) { echo "class='active'"; }?>>Биография</a></li>
+					<li><a href="/photo" <?php if ($menuItem == 3) { echo "class='active'"; }?>>Фотоальбом</a></li>
+					<li><a href="/mymusic" <?php if ($menuItem == 4) { echo "class='active'"; }?>>Музыка</a></li>
+					<li><a href="/myvideo" <?php if ($menuItem == 5) { echo "class='active'"; }?>>Видео</a></li>
+					<li><a href="/production" <?php if ($menuItem == 8) { echo "class='active'"; }?>>Продюсирование</a></li>
+					<li><a href="/promo" <?php if ($menuItem == 7) { echo "class='active'"; }?>>Организаторам</a></li>
+					<li><a href="/guest" <?php if ($menuItem == 6) { echo "class='active'"; }?>>Гостевая</a></li>
 				</ul>
 			</div>
 		</div>
