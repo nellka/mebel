@@ -90,4 +90,18 @@ class OrderProduct extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function orderProducts($order_id)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;        
+		$criteria->compare('t.order_id',$order_id);
+		
+     	$data_Provider = new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+        return $data_Provider;
+	}
 }

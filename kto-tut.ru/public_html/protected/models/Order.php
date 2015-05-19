@@ -21,12 +21,20 @@ class Order extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Product the static model class
 	 */
+	
 	const STATUS_CREATED = 0;
     const STATUS_IN_WORK = 1;    
+    const STATUS_ENDED = 2;
     
+    public static $getStatus = array(0=>"Создан", 1=>"Подтвержден", 2=>"Доставлен");
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	public function setStatus($status){
+	    $this->order_status_id = (int) $status;
+        $this->saveAttributes(array('order_status_id'));
 	}
 	/**
 	 * @return string the associated database table name
@@ -62,6 +70,8 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		      'us'=>array(self::HAS_ONE, 'user',array('id'=>'user_id',)),
+		      'pr'=>array(self::HAS_MANY, 'orderproduct',array('order_id'=>'order_id',))
 		);
 	}
 
@@ -79,8 +89,7 @@ class Order extends CActiveRecord
 			'price' => 'Цена',
 			'status' => 'Отображать',
 			'date_added' => 'Дата добавления',
-			'viewed' => 'Просмотров',
-			'category_id' => 'Категория'
+			'order_status_id' => 'Статус заказа',
 		);
 	}
 
@@ -94,15 +103,21 @@ class Order extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		
+		$criteria->with = 'us';        
+        $criteria->together = true;   		
+        
 		$criteria->compare('order_id',$this->order_id);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('order_status_id',$this->order_status_id,true);
-		$criteria->compare('comment',$this->comment);
+		//$criteria->compare('comment',$this->comment);
 		$criteria->compare('ip',$this->ip,true);
-		$criteria->compare('date',$this->date,true);
+		//$criteria->compare('date',$this->date,true);
 
-		return new CActiveDataProvider($this, array(
+		$data_Provider = new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
+        return $data_Provider;
+	}	
+	
 }

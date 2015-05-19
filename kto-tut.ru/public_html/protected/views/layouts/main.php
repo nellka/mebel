@@ -32,6 +32,7 @@
 				array('label'=>'Пользователи', 'url'=>array('/cp/user/admin')),				
 				array('label'=>'Товары', 'url'=>array('/cp/product/admin')),
 				array('label'=>'Категории', 'url'=>array('/cp/category/admin')),
+				array('label'=>'Заказы', 'url'=>array('/cp/order/admin')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
