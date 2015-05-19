@@ -70,8 +70,8 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		      'us'=>array(self::HAS_ONE, 'user',array('id'=>'user_id',)),
-		      'pr'=>array(self::HAS_MANY, 'orderproduct',array('order_id'=>'order_id',))
+		      'us'=>array(self::HAS_ONE, 'User',array('id'=>'user_id')),
+		      'pr'=>array(self::HAS_MANY, 'OrderProduct',array('order_id'=>'order_id'))
 		);
 	}
 
