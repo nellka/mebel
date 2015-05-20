@@ -26,7 +26,7 @@ class Order extends CActiveRecord
     const STATUS_IN_WORK = 1;    
     const STATUS_ENDED = 2;
     
-    public static $getStatus = array(0=>"Создан", 1=>"Подтвержден", 2=>"Доставлен");
+    public static $getStatus = array(0=>"Создан", 1=>"Подтвержден", 2=>"Доставлен",3=>"Отменен");
 
 	public static function model($className=__CLASS__)
 	{
