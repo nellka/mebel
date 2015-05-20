@@ -8,7 +8,7 @@ $quantityArray[$i] = $i;
 <div class="view">
     <div class="mchkbox"><?php echo CHtml::checkBox('id[]',false,array('value'=>$data->product_id,'style'=>'float:left', 'disabled'=>!$data->quantity?'disabled':false)) ?></div>
      <div class="smallimg">
-        <?php echo CHtml::image($data->image,$data->model); ?>
+        <?php echo CHtml::image($data->image,""); ?>
     </div>
     <b><?php  echo CHtml::encode($data->getAttributeLabel('model')); ?>:</b>
 	<?php echo CHtml::encode($data->model); ?><br>
