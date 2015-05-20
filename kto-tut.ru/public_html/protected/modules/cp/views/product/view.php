@@ -22,6 +22,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'product_id',
 		'model',
+		'ct.title',
 		'sku',
 		'quantity',
 		'image',

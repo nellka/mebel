@@ -136,11 +136,10 @@ class OrderController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Order('search');
+		$model=new Order('search');		
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Order']))
 			$model->attributes=$_GET['Order'];
-
 		$this->render('admin',array(
 			'model'=>$model,
 		));

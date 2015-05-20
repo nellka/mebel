@@ -43,14 +43,18 @@ $('.search-form form').submit(function(){
 		'model',
 		'sku',
 		'quantity',
-		'image',
+		'image',		
 		'price',
 		array(
 	        'name'=>'status',
 	        'type'=>'raw',	        
 	        'value'=>'$data->status?"Да":"Нет"',
         ),
-		
+		array(
+	        'header'=>'Категория',
+	        'type'=>'raw',	        
+	        'value'=>'$data->ct->title',
+        ),
 		/*'date_added',
 		'viewed',
 		*/

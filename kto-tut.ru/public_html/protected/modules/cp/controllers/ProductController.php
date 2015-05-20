@@ -168,7 +168,7 @@ class ProductController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Product::model()->findByPk($id);
+		$model=Product::model()->with(array('ct'=>array()))->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

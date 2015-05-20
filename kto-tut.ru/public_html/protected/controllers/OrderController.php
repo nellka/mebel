@@ -35,8 +35,43 @@ class OrderController extends CController
 				$this->render('error', $error);
 		}
 	}
+	public function actionMy()
+	{
+        if(Yii::app()->user->isGuest) throw new CHttpException(404,'The requested page does not exist.');
 
-	 public function actionDoOrder() {
+		$model=new Order('search');		
+		$model->unsetAttributes();  // clear any default values
+		$model->user_id = Yii::app()->user->id;
+		
+		$this->render('my',array(
+			'model'=>$model,
+		));
+	}
+	
+	public function actionView($id)
+	{ 
+	    if(Yii::app()->user->isGuest) throw new CHttpException(404,'The requested page does not exist.');		
+	    $model=$this->loadModel($id);	
+		if($model->user_id!=Yii::app()->user->id) throw new CHttpException(404,'The requested page does not exist.');	
+		$dataProvider=new CActiveDataProvider('Order');
+		$products = OrderProduct::model()->orderProducts($id); 
+		$this->render('view',compact('model','products'));
+	}
+	
+	public function loadModel($id)
+	{
+		$model=Order::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+	
+    public function actionSuccess()
+	{
+		$this->render('success');
+	}
+	
+	public function actionDoOrder() {
 	    if (Yii::app()->user->isGuest || empty ($_POST)) throw new CHttpException(404,'Страница не найдена');
 	    
         $product_ids = Yii::app()->request->getPost('id');
@@ -53,16 +88,36 @@ class OrderController extends CController
             $model_order->date = date('Y-m-d H:i:s',time());
             $model_order->save();
             $order_id = $model_order->order_id;
-        }        
+        } 
+        $products = array();      
 	    foreach ($product_ids as $pid){
+	        if(!isset($_POST["quantity$pid"])||!$_POST["quantity$pid"]) continue;
 	        $model_order_product=new OrderProduct;
             $model_order_product->product_id = $pid;
-            $model_order_product->order_id = $order_id;
+            $model_order_product->order_id = $order_id;            
             $model_order_product->quantity = $_POST["quantity$pid"];
+            $products[$pid] = $_POST["quantity$pid"];
             $model_order_product->save();
-        }       
+        }      
+        //Отпраляем письмо с заказом        
+         $message = new YiiMailMessage;
+         $message->view = 'orderinfo';
+         $message->setSubject("Создан новый заказ на сайте kto-tut.ru");
+         $message->setBody(array('products'=>$products,'comment'=>$_POST['comment'],'for_admin'=>true), 'text/html');
+         $message->addTo(Yii::app()->params['adminEmail']);                    
+         $message->from = Yii::app()->params['adminEmail'];        
+         Yii::app()->mail->send($message);
         
-        $this->redirect('/');
+         $message = new YiiMailMessage;
+         $message->view = 'orderinfo';
+         $message->setSubject('Ваш заказ на сайте kto-tut.ru успешно сформирован!');
+         $message->setBody(array('products'=>$products,'comment'=>$_POST['comment'],'for_admin'=>false), 'text/html');
+         $message->addTo(Yii::app()->user->me->email);                    
+         $message->from = Yii::app()->params['adminEmail'];        
+         Yii::app()->mail->send($message);        
+        
+         $this->redirect('success');
+        
     }
 
 }

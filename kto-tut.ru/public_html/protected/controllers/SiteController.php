@@ -43,8 +43,10 @@ class SiteController extends CController
 	public function actionIndex()
 	{
 		//$this->redirect('/card/index');
-		$dataProvider=new CActiveDataProvider('Product');
-		$products = Product::model()->search()->getData();    
+		//$dataProvider=new CActiveDataProvider('Product');
+		$dataProvider = new CActiveDataProvider('Product', array('pagination' => array('pageSize' => 100)));
+    
+		$products = $dataProvider->getData();   
 		$model = new Order;        
 		$this->render('index',compact('model','products'));		
 	}

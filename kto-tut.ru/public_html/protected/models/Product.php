@@ -63,6 +63,7 @@ class Product extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		  'ct'=>array(self::HAS_ONE, 'Category',array('category_id'=>'category_id')),
 		);
 	}
 

@@ -25,10 +25,12 @@
 
 <div class="container" id="page">
 	<div id="mainmenu">
-		<?php if (in_array(Yii::app()->user->role,array('admin','manager'))) {
+		<?php 
+		if (in_array(Yii::app()->user->role,array('admin','manager'))) {
 			$this->widget('zii.widgets.CMenu',array(		
 			'items'=>array(
 				array('label'=>'Магазин', 'url'=>array('/site/index')),
+				array('label'=>'Мои заказы', 'url'=>array('/order/my')),
 				array('label'=>'Пользователи', 'url'=>array('/cp/user/admin')),				
 				array('label'=>'Товары', 'url'=>array('/cp/product/admin')),
 				array('label'=>'Категории', 'url'=>array('/cp/category/admin')),
@@ -41,6 +43,7 @@
 			$this->widget('zii.widgets.CMenu',array(		
 			'items'=>array(
 				array('label'=>'Магазин', 'url'=>array('/site/index')),
+				array('label'=>'Мои заказы', 'url'=>array('/order/my'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

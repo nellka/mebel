@@ -1,31 +1,21 @@
-<?php
-/* @var $this CategoryController */
-/* @var $model Category */
-
-$this->breadcrumbs=array('Заказы');
-
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#category-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Управление заказами</h1>
+<h1>Мои заказы</h1>
 
 <div class="search-form" style="display:none">
 
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+
+<?php 
+$i = 1;
+foreach ($model->search()->getData() as $data) {?>
+    <div class="view">
+    <b><?=$i.'. '.CHtml::link("Заказ №".$data->order_id,"/order/view/id/$data->order_id")?></b><br>
+    Создан: <?=$data->date?><br>
+    Статус: <?=ORDER::$getStatus[$data->order_status_id]?><br>
+    </div>
+<?
+$i++;
+} /*$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'category-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -34,7 +24,7 @@ $('.search-form form').submit(function(){
 		array(
 	        'name'=>'order_id',
 	        'type'=>'raw',	        
-	        'value'=>'CHtml::link("Заказ №".$data->order_id,"/cp/order/update/id/$data->order_id")',
+	        'value'=>'',
         ),	
         
         array(
@@ -51,4 +41,4 @@ $('.search-form form').submit(function(){
         'date',	
 		
 	),
-)); ?>
+));*/ ?>
