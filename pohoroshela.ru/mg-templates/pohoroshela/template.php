@@ -60,8 +60,12 @@
                     } else { ?> <div class="auth" id="js_login">Кабинет</div> <?php*/ }; ?>
                     <nav><?php layout('topmenu'); ?></nav>
                     <nav class="js_topCategory">
-                        <ul>
-                           <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">
+                        <ul>                        
+                           <li><a href="/nabory-dlya-shitya-platev">Наборы для шитья</a></li>
+                    <li><a href="/uroki-shitya">Уроки шитья</a></li>
+                    <li><a href="/golossariy">Голоссарий</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                    <!-- <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">-->
                         </ul>                       
                     </nav>
                      <div id="menuar"></div>
@@ -70,17 +74,16 @@
                        <!-- <li>Магазин-склад: Москва, Нижняя Сыромятническая улица, 10</li>-->
                     </ul>
                 </div>
-            </header>
-          
-          
+            </header>        
           
             
-            <div class="js_clear"></div>
-          
-          
-          
+          <div class="js_clear"></div>
+          <?php if(URL::isSection(null)){ ?>
+                <img border="0" style="" src="mg-templates/pohoroshela/images/top1.jpg">
+          <?php } ?>
             
-            <article>
+           <article>    
+            <?php if(!URL::isSection(null)){ ?>        
                 <div id="js_left">
                     <?php filterCatalog();?>
                     <!-- Вывод каталога -->
@@ -101,12 +104,7 @@
                     <?php $type = URL::getQueryParametr('type'); 
                     if(URL::isSection('group') && ($type == 'recommend' || $type == 'latest')) :?>
                         <nav><?php layout('leftmenu'); ?></nav>
-                    <?php endif; ?><!-- /Вывод каталога -->
-                    
-                    
-                    
-                    
-                    
+                    <?php endif; ?><!-- /Вывод каталога -->               
                     <!-- Вывод меню "Уроки шитья" -->
                     <?php if(URL::isSection('uroki-shitya') 
                              || URL::isSection('uroki-shitya/oborudovanie-dlya-shitya/shveynye-mashinki') 
@@ -117,9 +115,7 @@
                              || URL::isSection('uroki-shitya/oborudovanie-dlya-shitya/stabilizatory-poverhnostey') 
                              || URL::isSection('uroki-shitya/osnovnye-tehniki-shitya') 
                              || URL::isSection('uroki-shitya/izgotovlenie-detaley-izdeliy') 
-                             || URL::isSection('uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do') ) :?> 
-
-                    
+                             || URL::isSection('uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do') ) :?>         
                   
                   
                   <ul class="js_pro-accordion-menu js_uroki">
@@ -136,40 +132,20 @@
                         <li><a href="<?php echo SITE?>/uroki-shitya/osnovnye-tehniki-shitya">Основные техники шитья</a></li>
                         <li><a href="<?php echo SITE?>/uroki-shitya/izgotovlenie-detaley-izdeliy">Изготовление деталей изделий</a></li>
                         <li><a href="<?php echo SITE?>/uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do">Уроки пошива готовых изделий от и до</a></li>
-                    </ul>
-                  
-                  
-                  
-                    <?php endif; ?><!-- /Вывод меню "Уроки шитья" -->
-                    
-                    
-                    
-                    
-                    
-                    <!-- Вывод меню "Голоссарий" -->
-                    <?php if(URL::isSection('golossariy') 
+                    </ul>           
+                  <?php endif; ?><!-- /Вывод меню "Уроки шитья" -->                  
+                  <!-- Вывод меню "Голоссарий" -->
+                  <?php if(URL::isSection('golossariy') 
                              || URL::isSection('golossariy/osnovnye-tehniki-shitya') 
-                             || URL::isSection('golossariy/izgotovlenie-delaley-izdeliy') ) :?>                             
-                        
-                  
-                  
-                  		<ul class="js_pro-accordion-menu js_golossariyMenu">
+                             || URL::isSection('golossariy/izgotovlenie-delaley-izdeliy') ) :?>                            
+                       <ul class="js_pro-accordion-menu js_golossariyMenu">
                             <li><a href="<?php echo SITE?>/golossariy">Оборудование для шитья</a></li>
                             <li><a href="<?php echo SITE?>/golossariy/osnovnye-tehniki-shitya">Основные техники шитья</a></li>
                             <li><a href="<?php echo SITE?>/golossariy/izgotovlenie-delaley-izdeliy">Изготовление деталей изделий</a></li>
-                        </ul>
-                  
-                  
-                  
-                    <?php endif; ?><!-- /Вывод меню "Голоссарий" -->
-                    
-                    
-                    
-                    
-                    
-                    <!-- Блок товаров в левой колонке -->
-                    <?php if(URL::isSection('cart') || URL::isSection('order') ) :?>
-                    
+                        </ul>                  
+                  <?php endif; ?><!-- /Вывод меню "Голоссарий" -->                   
+                  <!-- Блок товаров в левой колонке -->
+                    <?php if(URL::isSection('cart') || URL::isSection('order') ) :?>                   
                     
                   
                   	<div class="product-wrapper js_productLeftBlock">
@@ -185,10 +161,7 @@
                             <div class="product-price">1 141,78 руб.</div>
                           <span class="js_addToCart">Купить</span>
                         </a>
-                    </div>
-                       
-                  
-                  
+                    </div>                     
                     <div class="product-wrapper js_productLeftBlock">
                         <a href="/nabory-dlya-shitya-platev/nabory-vysokoy-slojnosti/nabor-dlya-shitya-goluboe-plate">
                             <div class="product-stickers">
@@ -202,31 +175,45 @@
                             <div class="product-price">1 141,78 руб.</div>
                           <span class="js_addToCart">Купить</span>
                         </a>
-                    </div>    
-                         
+                    </div>                      
                   
                   
                     <?php endif; ?><!-- /Блок товаров в левой колонке -->              
                 </div><!-- end #js_left -->
-                
-                
-                
-                
-                
+                <?php } else {?>
+                      <div style="width:960px;text-align:center"> 
+                    <!--  <div class="top1"> 
+  <div><div class="txt"><b>Мечтаете сшить себе платье или юбку? У Вас периодически возникает желание что-то творить и созидать?</b> <br>
+Мечтаете своими руками сшить платье, юбку, брюки, но боитесь?! А вдруг не получится или испортите ткань? Или после покупки швейной машинки, скажите: “Зачем купила не попробовав шить!! <br>
+Мы предлагаем Вам просто пошить выбрав простую модель! В итоге в 8 часов у Вас на руках будет готовое изделие, а в зависимости от сложности кроя возможно и не одно! <br>
+Мы предлагаем Вам на выбор ткань. Ее Вы сможете выбрать на сайте. Благодаря красоте ткани Вы сможете сшить простое по крою изделие, но которое будет выглядеть красиво и  изыскано, а Вы в нем неповторимы!</div></div>
+    <div class="top1_right"><div class="txt" style=""><h1>Схема работы сайта &ndash;Как самостоятельно составить комплект для ШИТЬЯ:</h1>
+     1)	Выбираете сложность пошива<br>
+2)	Выбираете модель для шитья (с фото)<br>
+3)	Мы подобрали подходящие для данной модели ткани  - Вы выбираете!<br>
+4)	Мы подобрали подходящую для данной модели фурнитуру  - Вы выбираете!<br>
+5)	Добавляете если необходимо ткань для пробного пошива.<br>
+6)	ПОЛУЧАЕТЕ БЕСПЛАТНО ВЫКРОЙКУ данной модели <br>
+7)	ПОЛУЧАЕТЕ БЕСПЛАТНО инструкцию по номерам для данной модели
+       </div>
+   <input type="button" value="ЖМИ">
+  </div>   
+  </div>-->
+                <?}?>                 
                 <div id="js_center">
                     
                     
                     <!-- Слайдер на главной -->
                     <?php if(URL::isSection(null)): ?>
                     
-                    <div style="" class="topb">
-                    <div class="h">Новый вид шитья - ШИТЬЕ ПО НОМЕРАМ!</div>
+                 <div style="" class="topb">
+                    <!--   <div class="h">Новый вид шитья - ШИТЬЕ ПО НОМЕРАМ!</div>
 					<div class="sublogo">Хотите научиться шить? Не знаете с чего начать?<br>
 					Шейте с нами просто и быстро!!!<br>
 					<font class="txt">Закажите набор для шитья и получите:</font>
 					</div>
 					<img border="0" src="uploads/mainp/logo_sub.jpg" style=""> 
-					
+					-->
                         <img border="0" src="uploads/mainp/logo-1-min.jpg" style="">       
                     <div>
                     <div class="c1" style="width: 155px;">
@@ -296,16 +283,18 @@
                      </div>
      
 
-                    <div class="slider-home">
+                  <!--  <div class="slider-home">
                         <ul>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/1.jpg" alt="image" /></li>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/2.jpg" alt="image" /></li>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/3.jpg" alt="image" /></li>
                           
                         </ul>
-                    </div>
+                    </div>-->
                     <?php endif; ?><!-- /Слайдер на главной -->
-                    
+                   <?php if(URL::isSection(null)){ ?>
+                   </div>
+                   <?}?>
                     
                     <?php layout('content'); ?>
                 </div>
