@@ -115,7 +115,7 @@ class Order extends CActiveRecord
 		//$criteria->compare('date',$this->date,true);
 
 		$data_Provider = new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>$criteria,'order'=>'order_id desc'
 		));
         return $data_Provider;
 	}	

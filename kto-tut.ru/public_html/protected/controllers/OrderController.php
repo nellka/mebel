@@ -38,13 +38,19 @@ class OrderController extends CController
 	public function actionMy()
 	{
         if(Yii::app()->user->isGuest) throw new CHttpException(404,'The requested page does not exist.');
-
-		$model=new Order('search');		
-		$model->unsetAttributes();  // clear any default values
-		$model->user_id = Yii::app()->user->id;
+		
+        $dataProvider = new CActiveDataProvider('Order', 
+        	array('pagination' => array('pageSize' => 20),
+        		  'criteria'=>array('order'=>'order_id desc','condition'=>"user_id=".Yii::app()->user->id))        	
+       	 );
+    
+		//$model=new Order('search');		
+		//$model->unsetAttributes();  // clear any default values
+		//$model->user_id = ;
 		
 		$this->render('my',array(
-			'model'=>$model,
+			//'model'=>$model,
+			'dataProvider'=>$dataProvider
 		));
 	}
 	

@@ -1,0 +1,276 @@
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 95%;
+  clear: both;
+  position: relative;
+}
+
+.alpha,
+.omega {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.align_center,
+.align_right {
+  text-align: right;
+}
+
+/*custom*/.flexslider{clear:both}
+
+
+/* `EDITS
+------------------------------------------------------------------------------------*/
+.top {
+	text-align: center
+}
+.top #welcome {
+	float: none;
+}
+.top .links {
+	float: none;
+	text-align: center;
+	margin-top: 10px;
+	width: 100%;
+}
+.top .links a {
+	padding: 0;
+	display: inline-block;
+	float: none;
+	text-align: center;
+}
+#language, #currency {
+	margin-top: 10px;
+	float: none;
+}
+.hotLine {
+	margin: 0 auto;
+	float: none;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.hotLine img {
+	display: none;
+}
+header {
+	height: auto;
+	margin-bottom: 50px;
+	text-align: center;
+}
+header #cart {
+	top: 60px;
+}
+header #cart .content {
+	max-width: 250px;
+	left: -43px !important;
+}
+header #logo {
+	float: none;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+header #logo img {
+	width: 80%
+}
+#menu  {
+	width: 380px;
+	display: none;
+}
+.menuWrap {
+	height: 103px;
+	background: none;
+}
+.menuDevices {
+	display: block !important;
+	width: 100%;
+	float: none;
+	text-align: center
+}
+#search {
+	width: 96%;
+	padding: 1%;
+	margin: 6px auto;
+	float: none;
+	border: 1px solid #eee;
+}
+.menuDevices select {
+	padding: 5px;
+	border: 1px solid #eee;
+	background: #fff;
+	height: 38px;
+	width: 98%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none;
+	margin-top: 6px;
+}
+.category-list div {
+	width: 48%;
+}
+.banner {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.jcarousel-skin-opencart .jcarousel-item-horizontal {
+	margin: 0 !important;
+	padding: 0 16px;
+	height: 80px;
+}
+.jcarousel-skin-opencart .jcarousel-item-horizontal img {
+	max-width: 100%;
+	margin-top: 20px;
+}
+.box-product, .product-grid {
+	text-align: center
+}
+.box-product > div.normalView, .product-grid > div {
+	float: none;
+	display: inline-block
+}
+.product-filter .sort {
+	margin-right: 15px;
+}
+.product-compare {
+	margin-right: 15px;
+}
+.product-list .image {
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	float: none;
+}
+.product-list .right {
+	float: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	border: none;
+}
+.product-list > div .hover-options {
+	display: block;
+	float: none;
+	text-align: center;
+	margin: 15px auto !important;
+	overflow: hidden;
+	padding-right: 26%;
+}
+.product-list > div:hover .hover-options {
+	float: none !important;
+	margin: 15px auto !important;
+	padding-right: 0
+}
+.category {
+	display: none;
+}
+#column-left .normalView, #column-right .normalView {
+	text-align: center
+}
+#column-left .normalView .image, #column-right .normalView .image {
+	float: none;
+	margin: 0 auto
+}
+#column-left .box-product .rating, #column-right .box-product .rating {
+	float: none;
+}
+.poweredby {
+	margin-bottom: 10px;
+}
+.paymentIcons {
+	float: right
+}
+.paymentIcons li {
+	float: right;
+	margin: 2px;
+}
+.category-info .image {
+	width: 100%;
+	text-align: center;
+	float: none;
+}
+.category-info .image img {
+	width: auto
+}
+.right-part-2 {
+	width: 100% !important;
+}
+.box .box-heading {
+	text-align: center;
+}
+#column-left .box .box-heading, #column-right .box .box-heading {
+	font-size: 15px;
+}
+#column-left .saleIcon, #column-right .saleIcon {
+	left: 35px;
+}
+.right-part-2 {
+	width: 50%;
+}
+.product-filter .display {
+	float: right;
+	clear: both;
+	margin: 0 15px 5px 0;
+}
+.mousetrap {
+	width: 100%;
+}
+.cloud-zoom-big {
+	right: -10px !important;
+	width: 109% !important;
+	height: 109% !important;
+}
+.product-info > .left {
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+}
+.product-info .image {
+	width: 90%;
+	float: none;
+	margin: 10px auto;
+}
+.product-info .image-additional {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.product-info .image-additional a {
+	float: none;
+	display: inline-block
+}
+.product-info > .left + .right {
+	margin: 0;
+}
+footer .column {
+	width: 100%;
+}
+.htabs a {
+	width: 94%;
+	padding: 3%;
+}
+.login-content .left {
+	width: 100%;
+}
+.login-content .right {
+	width: 100%;
+}
+#content {
+	overflow: visible;
+	margin-right: 10px;
+	margin-left: 10px;
+}

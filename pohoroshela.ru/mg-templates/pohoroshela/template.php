@@ -61,11 +61,11 @@
                     <nav><?php layout('topmenu'); ?></nav>
                     <nav class="js_topCategory">
                         <ul>                        
-                           <li><a href="/nabory-dlya-shitya-platev">Наборы для шитья</a></li>
+                     <!--      <li><a href="/nabory-dlya-shitya-platev">Наборы для шитья</a></li>
                     <li><a href="/uroki-shitya">Уроки шитья</a></li>
                     <li><a href="/golossariy">Голоссарий</a></li>
-                    <li><a href="/contacts">Контакты</a></li>
-                    <!-- <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">-->
+                    <li><a href="/contacts">Контакты</a></li>-->
+                     <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">
                         </ul>                       
                     </nav>
                      <div id="menuar"></div>
@@ -182,38 +182,91 @@
                 </div><!-- end #js_left -->
                 <?php } else {?>
                       <div style="width:960px;text-align:center"> 
-                    <!--  <div class="top1"> 
-  <div><div class="txt"><b>Мечтаете сшить себе платье или юбку? У Вас периодически возникает желание что-то творить и созидать?</b> <br>
-Мечтаете своими руками сшить платье, юбку, брюки, но боитесь?! А вдруг не получится или испортите ткань? Или после покупки швейной машинки, скажите: “Зачем купила не попробовав шить!! <br>
-Мы предлагаем Вам просто пошить выбрав простую модель! В итоге в 8 часов у Вас на руках будет готовое изделие, а в зависимости от сложности кроя возможно и не одно! <br>
+                    <div class="top1"> 
+  <div><div class="txt">Мечтаете сшить себе платье или юбку? У Вас периодически возникает желание что-то творить и созидать? <br> <br>
+Мечтаете своими руками сшить платье, юбку, брюки, но боитесь?! А вдруг не получится или испортите ткань? Или после покупки швейной машинки, скажите: “Зачем купила не попробовав шить!! <br> <br>
+Мы предлагаем Вам просто пошить выбрав простую модель! В итоге в 8 часов у Вас на руках будет готовое изделие, а в зависимости от сложности кроя возможно и не одно! <br> <br>
 Мы предлагаем Вам на выбор ткань. Ее Вы сможете выбрать на сайте. Благодаря красоте ткани Вы сможете сшить простое по крою изделие, но которое будет выглядеть красиво и  изыскано, а Вы в нем неповторимы!</div></div>
-    <div class="top1_right"><div class="txt" style=""><h1>Схема работы сайта &ndash;Как самостоятельно составить комплект для ШИТЬЯ:</h1>
+    <div class="top1_right">
+    <div class="coner"></div>
+    <div class='h1'>Схема работы сайта &ndash;Как самостоятельно составить комплект для ШИТЬЯ:</div>
+    <div class="txt" style="">
      1)	Выбираете сложность пошива<br>
 2)	Выбираете модель для шитья (с фото)<br>
 3)	Мы подобрали подходящие для данной модели ткани  - Вы выбираете!<br>
 4)	Мы подобрали подходящую для данной модели фурнитуру  - Вы выбираете!<br>
 5)	Добавляете если необходимо ткань для пробного пошива.<br>
-6)	ПОЛУЧАЕТЕ БЕСПЛАТНО ВЫКРОЙКУ данной модели <br>
-7)	ПОЛУЧАЕТЕ БЕСПЛАТНО инструкцию по номерам для данной модели
+6)	<b>ПОЛУЧАЕТЕ БЕСПЛАТНО</b> ВЫКРОЙКУ данной модели <br>
+7)	<b>ПОЛУЧАЕТЕ БЕСПЛАТНО</b> инструкцию по номерам для данной модели
        </div>
-   <input type="button" value="ЖМИ">
+        <div class='right-b'> <div class='ttl'>Подобрать модель и ткань для самостоятельного шитья.</div>
+        <a href="/nabory-dlya-shitya-platev"  class="button_pink" >ЖМИ!</a></div>
   </div>   
-  </div>-->
-                <?}?>                 
-                <div id="js_center">
-                    
-                    
-                    <!-- Слайдер на главной -->
+  </div>
+                <?}?>               
+                   <!-- Слайдер на главной -->
                     <?php if(URL::isSection(null)): ?>
-                    
-                 <div style="" class="topb">
+                    <div id="js_center" style='padding-bottom:0px'>  
+                    <img border="0" src="uploads/mainp/logo-2-min.jpg" style="padding: padding:  0 0 35px;">
+                    <div class="topb2" style="">
+    <div style="" class="i1_n n">1</div>
+    <img border="0" src="uploads/mainp/girl-min.jpg" style="top: 0px; left: 52px;">
+    <div class="i1_t" style="">Разработали <br>стильные модели <br>для самостоятельного <br>шитья</div>
+    <div class="i1_p p"></div>
+    
+    <div class="i2_n n">2</div>
+    <img border="0" src="uploads/mainp/tkan-min.jpg" style="top: 110px; left: 450px;">
+    <div style="" class="i2_t">Подобрали <br> для них ткани</div>
+    <div class="i2_p p"></div>
+    
+    <div class="i3_n n">3</div>
+    <img border="0" src="uploads/mainp/vikroika2-min.jpg" style="top: 318px; left: 35px;">
+    <div class="i3_t" style="">Спроектировали<br>выкройки по<br>российским<br>лекалам</div>
+    <div class="i3_p p"></div>
+    
+    <div class="i4_n n">4</div>
+    <img border="0" src="uploads/mainp/pugov2-min.jpg" style="top: 440px; left: 410px;">
+    <div class="i4_t" style="">Дополнили<br>необходимой фурнитурой</div>
+    <div class="i4_p p"></div>
+    
+    <div class="i5_n n">5</div>
+    <div class="i5_t" style="">Написали<br>инструкцию по<br>пошиву к<br>каждой модели</div>
+  </div>
+    </div>             
+  <div id="js_center-main">  
+   <div class="top2">
+    <div class='h1'>Наше предложение<br>
+”ЛУЧШЕЕ ИЗ ВОЗМОЖНЫХ”<br>
+на сегодняшний день на рынке шитья, потому что:</div>
+    <div class="txt" style="">
+     1.	<b>ВЫ ПОЛУЧАЕТЕ БЕСПЛАТНО МОДЕЛЬ И ВЫКРОЙКУ</b> по российским лекалам на свой размер,платите только за ткань и фурнитуру.<br>
+2.	<b>МЫ УЧИМ ВАС ШИТЬ БЕСПЛАТНО</b> – К ткани, модели, выкройке и дополнительным материалам
+        прилагается пошаговая ИНСТРУКЦИЯ ПО НОМЕРАМ для новичков.  <br>
+3.	<b>МЫ УЧИТЬ ВАС ШИТЬ ПРОСТО</b> - Специально для ВАС мы сделали <span style="color: #9d265f;font-size: 18px;">ИНСТРУКЦИЮ ПО НОМЕРАМ </span>
+        предельно простой  и понятной, без швейной терминологии. Детали расписаны по номерам.
+        Прилагаются схемы и картинки. <a href="#" style="color:#9d265f">Посмотреть пример.</a><br>
+4.	<b>ВЫ ЭКОНОМИТЕ ВРЕМЯ</b>  - Все от ткани до маленькой пуговицы можно купить в одном магазине.<br>
+5.	<b>ВЫ НЕ ОШИБЕТЕСЬ С ВЫБОРОМ ТКАНИ</b> – Мы подобрали правильные ткани для моделей.
+        Купленная неподходящая ткань не лежит дома. <br>
+6.	<b>ОНЛАЙН ПОДДЕРЖКА</b>   - Кроме всего прочего ВЫ можете задать нам вопрос
+        по почте и наши высококвалифицированные швеи дадут ответ. <br>
+7.	<b>ВЫ СОШЬЕТЕ, ТО ЧТО КУПИЛИ</b> – Мы проверяли!<br>
+
+       </div>
+           
+        <div class='right-b'> <div class='ttl'>Подобрать модель и ткань для самостоятельного шитья.</div>
+        <a href="/nabory-dlya-shitya-platev"  class="button_pink" >ЖМИ!</a></div>
+  </div>  
+  </div>             
+  <div id="js_center"  style='padding-bottom:0px'> 
+  <div style="" class="topb">
                     <!--   <div class="h">Новый вид шитья - ШИТЬЕ ПО НОМЕРАМ!</div>
 					<div class="sublogo">Хотите научиться шить? Не знаете с чего начать?<br>
 					Шейте с нами просто и быстро!!!<br>
 					<font class="txt">Закажите набор для шитья и получите:</font>
 					</div>
-					<img border="0" src="uploads/mainp/logo_sub.jpg" style=""> 
-					-->
+					<img border="0" src="uploads/mainp/logo_sub.jpg" style=""> -->
+					
                         <img border="0" src="uploads/mainp/logo-1-min.jpg" style="">       
                     <div>
                     <div class="c1" style="width: 155px;">
@@ -254,34 +307,21 @@
                       <img border="0" style="float: left;padding: 20px 0 0 0" src="uploads/mainp/k-min.jpg">
                       <div style="" class="podarok">Готовый <br> комлект <br>для шитья <br>своими руками</div>
                     </div>
-                    
-                    <img border="0" src="uploads/mainp/logo-2-min.jpg" style="padding: 35px;">
-                    <div class="topb2" style="">
-    <div style="" class="i1_n n">1</div>
-    <img border="0" src="uploads/mainp/girl-min.jpg" style="top: 0px; left: 52px;">
-    <div class="i1_t" style="">Разработали <br>стильные модели <br>для самостоятельного <br>шитья</div>
-    <div class="i1_p p"></div>
-    
-    <div class="i2_n n">2</div>
-    <img border="0" src="uploads/mainp/tkan-min.jpg" style="top: 110px; left: 450px;">
-    <div style="" class="i2_t">Подобрали <br> для них ткани</div>
-    <div class="i2_p p"></div>
-    
-    <div class="i3_n n">3</div>
-    <img border="0" src="uploads/mainp/vikroika2-min.jpg" style="top: 318px; left: 35px;">
-    <div class="i3_t" style="">Спроектировали<br>выкройки по<br>российским<br>лекалам</div>
-    <div class="i3_p p"></div>
-    
-    <div class="i4_n n">4</div>
-    <img border="0" src="uploads/mainp/pugov2-min.jpg" style="top: 440px; left: 410px;">
-    <div class="i4_t" style="">Дополнили<br>необходимой фурнитурой</div>
-    <div class="i4_p p"></div>
-    
-    <div class="i5_n n">5</div>
-    <div class="i5_t" style="">Написали<br>инструкцию по<br>пошиву к<br>каждой модели</div>
-  </div>
+                  
                      </div>
-     
+                       </div>             
+  <div id="js_center_main"> 
+     <p>Даже с минимальным опытом в итоге Вы получите готовое изделие и удивление, что да, эту красоту сделали Вы!! И ее можно носить, дарить тепло своих рук семье, радовать мужчин, одевать детишек. Эмоции Вас будут переполнять от процесса созидания творения своими руками, а вдохновение наполнит Вас на новые идеи и желания!! 
+ </p>
+	 <p>Предлагаем Вам почувствовать себя модельерами! У Вас имеется возможность выбрать ткань,  поэкспериментировать с длиной изделия, рукава,  самой выбрать глубину горловины. Вы можете пофантазировать с цветом, формой кружева, тесьмы, и др. отделкой. Выбор ткани за Вами! У нас имеются ткани красивые, разнообразные, качественные различного состава: хлопок, поплин, шелк, шифон, и др.
+ </p>
+	 <p>
+	Заказав набор для шитья Вы также получите знания и навыки изготовления выбранного изделия. А также внутреннее понимание, хотите ли Вы этим заниматься профессионально.
+	 </p>
+	 <p></p>
+Мы приглашаем Вас ознакомиться с нашим сайтом, и выбрать то, чем же Вы так давно хотели заняться, но не решались. 
+</p>
+</div>
 
                   <!--  <div class="slider-home">
                         <ul>
@@ -293,11 +333,14 @@
                     </div>-->
                     <?php endif; ?><!-- /Слайдер на главной -->
                    <?php if(URL::isSection(null)){ ?>
+                   <div id="js_center-main" > 
+                        <?php layout('content'); ?>
                    </div>
-                   <?}?>
-                    
-                    <?php layout('content'); ?>
-                </div>
+                   <?} else {?>
+                    <div id="js_center" style="text-align:left">
+                        <?php layout('content'); ?>
+                    </div>
+                <?}?>
             </article>
             
             
