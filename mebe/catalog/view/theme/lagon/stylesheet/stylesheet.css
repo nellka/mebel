@@ -975,14 +975,98 @@ box-shadow: inset 0px 0px 40px rgba(232,232,232,1);
 #menu > ul > li:hover > a {
 color: #FFFFFF !important;
 }
+
+body, td, th, input, select, textarea, option, optgroup {
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+body {
+    background: #ffffff none repeat scroll 0 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+element.style {
+    margin-left: -413.167px;
+}
+#menu > ul > li > div {
+    background: #fff url("../image/bg-gray.png") repeat-x scroll center bottom;
+    box-shadow: 0 2px 8px #ccc;
+    display: none;
+    left: 0;
+    margin-left: 0 !important;
+    padding: 15px 10px;
+    position: absolute;
+    top: 100%;
+    width: 1180px;
+    z-index: 5;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+#menu > ul > li {
+    line-height: 50px;
+}
+li {
+    list-style: outside none none;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+#menu ul {
+    list-style: outside none none;
+}
+#cssmenu ul {
+    line-height: 1;
+    list-style: outside none none;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+body, td, th, input, textarea, select, a {
+    font-size: 14px;
+}
+body, p {
+    font-family: "PT Sans",Tahoma,Geneva,sans-serif;
+    font-size: 14px;
+}
+body {
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+    font-size: 100%;
+}
+.imageMenu img {
+    max-width: 100px;
+}
 #menu > ul > li > div {
 	display: none;
 	position: absolute;
 	left: 0;
 	top: 100%;
-	width: 96%;
+	width: 1180px;
 	z-index: 5;
-	padding: 15px 2%;
+	padding: 15px 10px;
 	margin-left: 0 !important;
 	-moz-box-shadow: 0px 2px 8px #ccc;
 	-webkit-box-shadow: 0px 2px 8px #ccc;
@@ -995,7 +1079,7 @@ color: #FFFFFF !important;
 #menu > ul > li > div > ul {
 	display: table-cell;
 	float: left;
-	width: 80%;
+	width: 90%;
 	margin-left: 0;
 }
 #menu > ul > li > div > ul > li {
@@ -1005,7 +1089,7 @@ color: #FFFFFF !important;
 	border-bottom: 1px dashed #eee;
 	float: left;
 	display: inline;
-	width: 22%;
+	min-width: 20%;
 	margin-right: 2%;
 	position: relative;
 }
@@ -1823,6 +1907,9 @@ ul.box-filter > li ul li {
 .category-info .image img {
 	width: 70%;
 }
+#cat59 p {
+    margin: -20px 0 0;
+}
 .right-part-2 {
 	float: left;
 	width: 70%;
@@ -2328,7 +2415,7 @@ float: left;
 	width: 100%;
 }
 .product-info .image-additional {
-	width: 430px;
+	width: 450px;
 	margin-left: -10px;
 	clear: both;
 	overflow: hidden;
@@ -2336,7 +2423,10 @@ float: left;
 .product-info .image-additional img {
 	border: 1px solid #E7E7E7;
 	padding: 2px;
-    width: 48px;
+    width: 200px;
+}
+.options_p {
+    display: table;
 }
 .product-info .image-additional a {
 	float: left;
@@ -3354,7 +3444,8 @@ margin-right: 10px;
 }
 
 .mainpanelright {
-    width: 800px;
+    width: 850px;
+    display: table;
 }
 
 

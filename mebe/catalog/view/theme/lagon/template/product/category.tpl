@@ -25,56 +25,41 @@
                 <?php /*if ($thumb) { ?>
                     <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>"></div>
                 <?php } */?>
-            
-                <div class="right-part-2" id='cat<?=$category_id?>'>
-                                       
+
                     
                     <!--refine search -->
                     <?php if ($categories) { ?>
-                    <div class="refine">
                         <h2 class="refine-search"><?php echo $text_refine; ?></h2>
-                        <div class="category-list">
-                        <div class="mainpanelright">
+                        <div class="mainpanelright"  id='cat<?=$category_id?>'>
 
                               <?php foreach ($categories as $category) { 
-
-                                  ?>
-                              <div>
-                                <?php if ( $category["thumb"]){?>
-                                <span class="image-refine"><img src="<?php echo $category["thumb"];?>" width="75"/></span>
-                                <?php } ?>	
-                                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-                              </div>
-                              <?php /*
-                              ?>
+                               ?>
                               <div style="">
-<a href="/index.php?route=product/category&path=59_61">
- <?php if ( $category["thumb"]){?>
-    <img style="width: 180px;" src="<?=$category["thumb"]?>" alt="<?php echo $category['name']; ?>"></span>
-    <?php } ?>	
-</a>
-<p>
-<a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-</p>
-</div>
-</div>
-                              
-                               <?*/} ?>
-                         </div>
+                                <a href="/index.php?route=product/category&path=59_61">
+                                 <?php if ( $category["thumb"]){?>
+                                    <img style="width: 180px;" src="<?=$category["thumb"]?>" alt="<?php echo $category['name']; ?>"></span>
+                                    <?php } ?>	
+                                </a>
+                                <p>
+                                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                                </p>
+                                </div>                              
+                               <?} ?>
                      </div>
                     <?php } ?>
-                       </div>
+                     </div>
                     <!-- description -->
                     <?php if ($description) { ?>
-                    <?php echo $description; ?>
+                    <?php  echo "<div>".$description."</div>"; ?>
                     <?php } ?>
                    <!--/right-part-->
-            
-            </div><!--/box-content-->
-        </div><!--/box-->
+
+           <!--/box-content-->
+ </div>
     <?php } ?>
-      
-  <?php if ($products) { ?>
+    
+  <?php 
+   if ($products) { ?>
   
   <!--product filter
   ==============================================================-->
