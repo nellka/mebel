@@ -50,7 +50,7 @@
                      </div>
                     <!-- description -->
                     <?php if ($description) { ?>
-                    <?php  echo "<div>".$description."</div>"; ?>
+                    <?php  echo "<div style='line-height: 25px;  padding: 0 20px;  text-align: justify;'>".$description."</div>"; ?>
                     <?php } ?>
                    <!--/right-part-->
 

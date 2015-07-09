@@ -153,7 +153,7 @@ todo.onload(function(){
 	</script>
     -->
 
-	<!--<script src='catalog/view/javascript/jquery/jquery.hoverIntent.minified.js'></script>
+	<!--<script src='catalog/view/javascript/jquery/jquery.hoverIntent.minified.js'></script>-->
     <script src='catalog/view/javascript/jquery/jquery.dcjqaccordion.2.7.min.js'></script>
     <script>
 	$(document).ready(function($){
@@ -169,7 +169,7 @@ todo.onload(function(){
 		classExpand : 'dcjq-current-parent'
 	});
 	});
-	</script>-->
+	</script>
     <link rel="stylesheet" href="catalog/view/theme/lagon/stylesheet/livesearch.css" />
     <script src="catalog/view/javascript/jquery/livesearch.js"></script>
 
