@@ -293,61 +293,11 @@ todo.onload(function(){
 			<div id="menu">
             <ul> 
                <li class='<?=!$page?'active':""?>'><a href='#'><span>Главная</span></a></li> 
-               <li><a href="/index.php?route=product/category&path=59_298">Кухни-секции</a>
-<div style="width:400px">
-<ul class="sec_menu">
-<li><div >
-<img  src="/image/sec_soft_small.jpg" style="float: left; padding:10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_273">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_274">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_275">Шкафы в полную высоту</a>
-</div>
-</li>
-
-<li>
-<div>
-<img src="/image/sec_soft_small.jpg" style="float: left; padding: 10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_273">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_274">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_275">Шкафы в полную высоту</a>
-</div></li>
-
-<li><div><img  src="/image/sec_hitek_small.jpg" style="float: left; padding:10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_281">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_280">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_282">Шкафы в полную высоту</a></div></li>
-
-<li><div><img  src="/image/sec_uyut_small.jpg" style="float: left; padding:10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_283">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_284">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_285">Шкафы в полную высоту</a></div></li>
-
-<li><div><img  src="/image/sec_volna_small.jpg" style="float: left; padding: 10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_286">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_287">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_288">Шкафы в полную высоту</a></div></li>
-
-<li><div><img  src="/image/sec_soprano_small.jpg" style="float: left; padding: 10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_289">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_290">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_291">Шкафы в полную высоту</a></div></li>
-
-<li><div><img  src="/image/sec_prest_small.jpg" style="float: left; padding: 10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_292">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_293">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_294">Шкафы в полную высоту</a></div></li>
-
-<li><div><img  src="/image/sec_prem_small.jpg" style="float: left; padding:10px 10px 0" alt="">
-<a href="/index.php?route=product/category&path=59_298_295">Шкафы верхние</a>
-<a href="/index.php?route=product/category&path=59_298_296">Тумбы нижние</a>
-<a href="/index.php?route=product/category&path=59_298_297">Шкафы в полную высоту</a></div></li>
-</ul>
-</div>
-</li>
+             
                 <?php foreach ($categories as $i=>$category) { 
                     if($i==0) continue;
                      if($i==1) continue;
-                      if($i==2)continue;
+                      //if($i==2)continue;
                 		/*//$class = !$page?'active':""              	
                        
                         echo '<li >';                            
