@@ -35,7 +35,7 @@
                               <?php foreach ($categories as $category) { 
                                ?>
                               <div style="">
-                                <a href="/index.php?route=product/category&path=59_61">
+                                <a href="<?php echo $category['href']; ?>">
                                  <?php if ( $category["thumb"]){?>
                                     <img style="width: 180px;" src="<?=$category["thumb"]?>" alt="<?php echo $category['name']; ?>"></span>
                                     <?php } ?>	

@@ -22,36 +22,36 @@
     <?php if ($thumb || $images) { ?>
         <div class="left">
         
-          <?php if ($thumb) {/* ?>
+          <?php if ($thumb) { ?>
           <div class="image">
           	<span class="zoom"></span>
           <a href="<?php echo $popup; ?>" class = 'cloud-zoom' id='zoom1' rel="gallery[1]">
             <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" />
             </a>
           </div>
-          <?php */} ?>
-           <?php if ($thumb) { ?>
+          <?php } ?>
+           <?php if ($thumb) {/* ?>
          <div id="wrap" style="top:0px;z-index:9999;position:relative;">
             <a href='<?php echo $popup; ?>' id='zoom1' class = 'cloud-zoom' rel="position: 'inside' , showTitle: false, adjustX:0, adjustY:0">
             <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt='<?php echo $heading_title; ?>'/></a>
           </div>
-          <?php } ?>
+          <?php*/ } ?>
           
           <?php if ($images) { ?>
           
           <div class="image-additional">
-            <?php foreach ($images as $image) {/* ?>
+            <?php foreach ($images as $image) { ?>
             
             <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', gallery[1], smallImage: '<?php echo $image['thumb']; ?>' ">
             <img src="<?php echo $image['thumb']; ?>"  title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
             </a>
             
-            <?php */?>
+            <?php /*?>
              <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['thumb']; ?>' ">
              <img src="<?php echo $image['thumb']; ?>"  title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
             </a>
             
-           <? } ?>
+           <?*/ } ?>
           </div>
           
           <?php } ?>
@@ -71,8 +71,35 @@
         <?php if ($reward) { ?>
         <span><?php echo $text_reward; ?></span> <?php echo $reward; ?><br />
         <?php } ?>
-        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?></div>
-        
+        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?><br />
+         <?php if ($attribute_groups) { ?>
+          <!-- <span><?php echo $tab_attribute; ?></span>  --> <?php /* ?>
+  <div id="tab-attribute" class="tab-content">
+    <table class="attribute">
+      <?php foreach ($attribute_groups as $attribute_group) { ?>
+      <thead>
+        <tr>
+          <td colspan="2"><?php echo $attribute_group['name']; ?></td>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+        <tr>
+          <td><?php echo $attribute['name']; ?></td>
+          <td><?php echo $attribute['text']; ?></td>
+        </tr>
+        <?php } ?>
+      </tbody>
+      <?php } ?>
+    </table>
+  </div>
+  <?php */
+    foreach ($attribute_groups as $attribute_group) { ?>   
+        <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+         <span><?php echo $attribute['name']; ?>:</span>  <?php echo $attribute['text']; ?><br />
+        <?php } 
+       }  ?>
+ <?php } ?></div>
       <!-- price -->
       <?php if ($price) { ?>
       <div class="price">
@@ -84,10 +111,10 @@
         <?php } else { ?>
         <span class="price-old"><?php echo $price; ?></span> <span class="price-new"><?php echo $special; ?></span>
         <?php } ?>
-        <br />
-        <?php if ($tax) { ?>
+        <!--<br />-->
+        <?php if ($tax) { /*?>
         <span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span><br />
-        <?php } ?>
+        <?php */} ?>
         <?php if ($points) { ?>
         <span class="reward"><small><?php echo $text_points; ?> <?php echo $points; ?></small></span><br />
         <?php } ?>
@@ -101,7 +128,7 @@
       </div>
       </div>
       <?php } ?>
-      
+       
       <!-- cart -->
       <div class="cart">
         <div><?php echo $text_qty; ?>
@@ -211,12 +238,14 @@
           <span class="required">*</span>
           <?php } ?>
           <b><?php echo $option['name']; ?>:</b><br />
-          <?php foreach ($option['option_value'] as $option_value) { ?>
+          <?php
+          $i=0;
+          foreach ($option['option_value'] as $option_value) { ?>
             <div class="option-image">
-             <div class="vardiv" style="width: 135px; height: 190px; border-radius: 4px; border: 1px solid rgb(221, 221, 221); float: left; margin-right: 8px;">
+             <div class="vardiv" >
                  <label class="variantlbl" for="option-value-<?php echo $option_value['product_option_value_id']; ?>" class="variantlbl">
                 <div class="vh">
-                <input type="radio" class="variant" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                <input type="radio" <?=($i?"":"checked")?> class="variant" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
                 <?php echo $option_value['name']; ?>
                  <?php if ($option_value['price']) { ?>
                   (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
@@ -226,7 +255,9 @@
                  </label>
               </div>            
             </div>
-            <?php } ?>
+            <?php 
+          $i++;
+          } ?>
         </div>
        <div class="clearfix"></div>
         <?php } ?>
@@ -302,10 +333,8 @@
   <!-- Tabs 
   =========================================================-->
   <div id="tabs" class="htabs"><a href="#tab-description"><?php echo $tab_description; ?></a>
-    <?php if ($attribute_groups) { ?>
-    <a href="#tab-attribute"><?php echo $tab_attribute; ?></a>
-    <?php } ?>
-    <?php if ($review_status) { ?>
+   
+   <?php if ($review_status) { ?>
     <a href="#tab-review"><?php echo $tab_review; ?></a>
     <?php } ?>
     <?php if ($tags) { ?>
@@ -315,27 +344,7 @@
   
   
   <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
-  <?php if ($attribute_groups) { ?>
-  <div id="tab-attribute" class="tab-content">
-    <table class="attribute">
-      <?php foreach ($attribute_groups as $attribute_group) { ?>
-      <thead>
-        <tr>
-          <td colspan="2"><?php echo $attribute_group['name']; ?></td>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
-        <tr>
-          <td><?php echo $attribute['name']; ?></td>
-          <td><?php echo $attribute['text']; ?></td>
-        </tr>
-        <?php } ?>
-      </tbody>
-      <?php } ?>
-    </table>
-  </div>
-  <?php } ?>
+
   <?php if ($review_status) { ?>
   <div id="tab-review" class="tab-content">
     <div id="review"></div>

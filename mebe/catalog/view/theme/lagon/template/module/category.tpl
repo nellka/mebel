@@ -1,8 +1,9 @@
 <div class="box">
   <div class="box-heading"><span><?php echo $heading_title; ?></span></div>
   <div class="box-content">
+
     <div class="box-category  category">
-        <ul>
+       <?/*   <ul>
         <?php foreach ($categories as $category) { ?>
 		<?php if ($category['category_id'] ==59) { ?> <!-- Тут id категории-->
         <li class="dcjq-current-parent">
@@ -30,12 +31,13 @@
         <?php } ?>
 		<?php } ?>
       </ul>
-      
+     */?> 
       <ul class="accordion" id="accordion-1">
         <?php foreach ($categories as $category) { ?>
-		<?php if ($category['category_id'] != 69&&$category['category_id'] != 59) { ?> <!-- Тут id категории-->
+		<?php if ($category['category_id'] != 69) { ?> <!-- Тут id категории-->
         <li class="dcjq-current-parent">
-          <?php if ($category['category_id'] == $category_id) { ?>
+          <?php 
+          if ($category['category_id'] == $category_id||(!$category_id&&$category['category_id']==59)) { ?>
           <a href="<?php echo $category['href']; ?>" class="active maincategory"><?php echo $category['name']; ?></a>
           <?php } else { ?>
           <a href="<?php echo $category['href']; ?>" class="maincategory"><?php echo $category['name']; ?></a>

@@ -1,5 +1,13 @@
 @import 'reset.css';
-
+#tab-description ul li{
+	list-style-type: disc;
+    margin: 0 10px;
+    font-family: "PT Sans",Tahoma,Geneva,sans-serif;
+    
+ }
+#tab-description p{
+padding: 0 0 5px; 
+ }
 /*
 		body {
 background-color: #FFFFFF;
@@ -828,8 +836,8 @@ margin: 0 10px 0 15px;
   display: block;
   padding: 15px 15px 15px 5px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
+ /* font-weight: 700;
+  text-transform: uppercase;*/
   font-size: 14px;
   position: relative;
   -webkit-transition: color .25s;
@@ -1068,7 +1076,7 @@ body {
 	border-bottom: 1px dashed #eee;
 	float: left;
 	display: inline;
-	min-width: 20%;
+	min-width: 25%;
 	margin-right: 2%;
 	position: relative;
 }
@@ -2248,10 +2256,12 @@ float:none;
     width: 370px;
 }
 
-
+.related div.name{
+margin-top: 0px;
+}
 div.name{
-float: left;
- margin-top: -6px;
+   float: left;
+   margin-top: -6px; 
     padding: 0;
     max-width: 240px;
 }
@@ -2436,6 +2446,11 @@ float: left;
 .price-data {
 	float: left;
 	margin-top: 5px;
+}
+.product-info .price-data {
+    float: left;
+    font-size: 16px;
+    line-height: 20px;
 }
 .product-info .price {
 	overflow: hidden;
@@ -3375,6 +3390,9 @@ background:  #E72227;
 }
 .vardiv {
     margin-bottom: 8px;
+     border-radius: 4px; 
+     border: 1px solid rgb(221, 221, 221); 
+    /*width: 135px; height: 190px;float: left; margin-right: 8px;*/
 }
 input.variant{
     padding: 0;
@@ -3382,11 +3400,15 @@ input.variant{
 }
 .product-info .option-image .variantlbl img {
     display: block;
+    margin: 0 5px 5px;    
 	border: 0;
     cursor: pointer;
-    margin-right: 0;
-	max-width:135px;
-	max-height:190px;
+	max-width:120px;
+	max-height:120px;
+}
+
+.product-info #option-10247 .option-image .variantlbl img {
+	/*max-width:100px;*/
 }
 .product-info .option-image .vardiv label{
 display: inline;
@@ -3426,7 +3448,21 @@ margin-right: 10px;
     width: 850px;
     display: table;
 }
+.mainpanelright div{
+     border: 1px solid white;
+}
+.mainpanelright div p {
+    margin: -20px 0 0;
+    padding: 3px 0 0;
+}
+.mainpanelright a {
+    display: block;
 
+}
+
+.mainpanelright div:hover {
+    border: 1px solid black;
+}
 
 #menu ul li ul.sec_menu li {
     margin: 0;

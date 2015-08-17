@@ -121,7 +121,20 @@
                 <li>
                     <img src="catalog/view/theme/lagon/image/payment-icons/paypal.png" alt="">
                 </li>
-            
+                 
+                <li>
+                    <a href="http://ok.ru/group/52742313803953" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/ok.png" alt="" width="30"></a>
+                </li>
+                 
+                <li>
+                    <a href="http://vk.com/club95471972" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/v.png" alt="" width="30"></a>
+                </li>
+                 
+                <li>
+                    <a href="https://www.facebook.com/groups/1483202891998500/" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/fb.png" alt="" width="30"></a>
+                </li>
+
+
             </ul>
         </div>
         

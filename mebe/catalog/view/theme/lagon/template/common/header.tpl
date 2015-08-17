@@ -160,7 +160,8 @@ todo.onload(function(){
 	$('#accordion-1').dcAccordion({
 		eventType   : 'click',
 		autoClose   : true,
-		saveState   : true,
+		saveState   : false,
+		classParent  : 'active-parent',
 		disableLink : false,
 		speed       : 'slow',
 		showCount   : false,
