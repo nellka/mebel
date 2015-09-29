@@ -19,9 +19,16 @@
     <meta name="keywords" content="<?php echo $keywords; ?>" />
     <?php } ?>
     
-    <?php if ($icon) { ?>
+    <?php if ($icon) { /*?>
     <link href="<?php echo $icon; ?>" rel="icon" />
-    <?php } ?>
+    <?php } else {?>
+        <link rel="shortcut icon" href="http://mebelrubleff.ru/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="http://mebelrubleff.ru/favicon.ico" type="image/x-icon">
+     <?*/}?>
+     
+     <link type="image/x-icon" href="http://mebelrubleff.ru/favicon.ico" rel="shortcut icon">
+     <link type="image/ico" href="http://mebelrubleff.ru/favicon.ico" rel="icon">
+
     
     <?php foreach ($links as $link) { ?>
     <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />

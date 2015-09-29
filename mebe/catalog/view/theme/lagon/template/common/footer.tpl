@@ -90,7 +90,7 @@
         <div class="clearfix"></div>
         
         <div id="powered">
-        	<div class="poweredby"><!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=31322343&amp;from=informer" target="_blank" rel="nofollow"><img src="//mc.yandex.ru/informer/31322343/3_1_FFFFFFFF_FFF0F5FF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a><!-- /Yandex.Metrika informer --><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31322343 = new Ya.Metrika({id:31322343, clickmap:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/31322343" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+        	<div class="poweredby"><!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31322343 = new Ya.Metrika({ id:31322343, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/31322343" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
         	Мебельный Интернет-Магазин Рублефф © 2015</div>
             <ul class="paymentIcons">
             	
@@ -122,17 +122,7 @@
                     <img src="catalog/view/theme/lagon/image/payment-icons/paypal.png" alt="">
                 </li>
                  
-                <li>
-                    <a href="http://ok.ru/group/52742313803953" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/ok.png" alt="" width="30"></a>
-                </li>
-                 
-                <li>
-                    <a href="http://vk.com/club95471972" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/v.png" alt="" width="30"></a>
-                </li>
-                 
-                <li>
-                    <a href="https://www.facebook.com/groups/1483202891998500/" target="_blank"><img src="catalog/view/theme/lagon/image/social-icons/fb.png" alt="" width="30"></a>
-                </li>
+               
 
 
             </ul>

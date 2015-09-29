@@ -966,7 +966,7 @@ box-shadow: inset 0px 0px 40px rgba(232,232,232,1);
 	z-index: 20;
 	height: 45px;
 	line-height: 50px;
-	padding: 0 5px;
+	padding: 0 30px;
 }
 #menu > ul > li:hover {
 	background: #2e2e2e;
