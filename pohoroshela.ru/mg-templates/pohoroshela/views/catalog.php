@@ -69,6 +69,9 @@ mgSEO($data);
 
     <div class="js_clear"></div>
 
+  <?php 
+  echo $data["cat_desc"];?>
+    <div class="js_clear"></div>
   <?php echo $data['pager']; ?>
   <!-- Верстка поиска -->
 <?php else: ?>
