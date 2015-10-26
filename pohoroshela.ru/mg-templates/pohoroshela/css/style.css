@@ -2,6 +2,13 @@ body,html{width:100%;height:100%;margin:0;padding:0;background:url(../images/bg-
 /*nav.js_topCategory{position:absolute;width:100%;height:107px;top:70px;right:-65px;background:url(../images/bg-top-category.png) no-repeat}
 nav.js_topCategory ul{display:block;margin:12px 0 0 210px}
 */img{border:0}  
+.vikroika_url {
+    font-size: 20px;
+    margin: 115px 0 0 -50px;
+    position: absolute;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
 #js_center-main {
     box-sizing: border-box;
     display: inline-block;

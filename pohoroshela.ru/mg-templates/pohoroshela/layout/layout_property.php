@@ -48,7 +48,9 @@ echo $data['blockVariants']; ?>
           <?php echo $data['titleBtn']; ?>
 
           </a>
-
+          <? if( file_exists(URL::getDocumentRoot().'/pdf/'.$data['id'].".pdf")){?>
+        <a class = "vikroika_url" href = "<?php echo SITE.'/pdf/'.$data['id'].".zip" ?>">Скачать выкройку</a>
+        <? }?>
           <input type="submit" name="buyWithProp" onclick="return false;" style="display:none">
         <?php
         }

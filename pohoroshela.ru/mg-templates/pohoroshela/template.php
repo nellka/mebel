@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?if(URL::getClearUri()=='/main'){
+  	 require('template_last_2.php');
+  } else {?><!DOCTYPE html>
 <html>
     <head>
     <!--[if IE]>
@@ -60,51 +62,45 @@
                     } else { ?> <div class="auth" id="js_login">Кабинет</div> <?php*/ }; ?>
                     <nav><?php layout('topmenu'); ?></nav>
                     <nav class="js_topCategory">
-                        <ul>                        
-                     <!--      <li><a href="/nabory-dlya-shitya-platev">Наборы для шитья</a></li>
-                    <li><a href="/uroki-shitya">Уроки шитья</a></li>
-                    <li><a href="/golossariy">Голоссарий</a></li>
-                    <li><a href="/contacts">Контакты</a></li>-->
-                     <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">
+                        <ul>
+                           <img src="http://pohoroshela.ru/uploads/fraza.png" border="0" style="padding: 0 20px; width: 665px;">
                         </ul>                       
                     </nav>
                      <div id="menuar"></div>
                     <ul class="js_topContacts">
                         <li>Тел. 926-567-00-08</li>
-                       <!-- <li>Магазин-склад: Москва, Нижняя Сыромятническая улица, 10</li>-->
+                        <li>Магазин-склад: Москва, Нижняя Сыромятническая улица, 10</li>
                     </ul>
                 </div>
-            </header>        
+            </header>
+          
+          
           
             
-          <div class="js_clear"></div>
-          <?php if(URL::isSection(null)){ ?>
-                <img border="0" style="" src="mg-templates/pohoroshela/images/top1.jpg">
-          <?php } ?>
+            <div class="js_clear"></div>
+          
+          
+          
             
-           <article>    
-            <?php if(!URL::isSection(null)){ ?>        
+            <article>
                 <div id="js_left">
                     <?php filterCatalog();?>
                     <!-- Вывод каталога -->
                     <?php if(MG::get('controller')=="controllers_product" || MG::get('controller')=="controllers_catalog") :?>
                         <nav><?php layout('leftmenu'); ?></nav>
                     <?php  endif; ?>
-                    <?php if(URL::isSection(null) 
-                    || URL::getClearUri()=='/contacts' 
-                    || URL::getClearUri()=='/kurerskaya-dostavka-po-gorodam-rossii' 
-                    || URL::getClearUri()=='/oplata' 
-                    || URL::getClearUri()=='/personal' 
-                    || URL::getClearUri()=='/o-nas' 
-                    || URL::getClearUri()=='/enter' 
-                    || URL::getClearUri()=='/registration'
-                     || URL::getClearUri()=='/forgotpass' || URL::getClearUri()=='/karta-sayta' || URL::getClearUri()=='/dostavka-i-oplata') : ?>
+                    <?php if(URL::isSection(null) || URL::getClearUri()=='/contacts' || URL::getClearUri()=='/personal' || URL::getClearUri()=='/o-nas' || URL::getClearUri()=='/enter' || URL::getClearUri()=='/registration' || URL::getClearUri()=='/forgotpass' || URL::getClearUri()=='/karta-sayta' || URL::getClearUri()=='/dostavka-i-oplata') : ?>
                         <nav><?php layout('leftmenu'); ?></nav>
                     <?php  endif; ?>
                     <?php $type = URL::getQueryParametr('type'); 
                     if(URL::isSection('group') && ($type == 'recommend' || $type == 'latest')) :?>
                         <nav><?php layout('leftmenu'); ?></nav>
-                    <?php endif; ?><!-- /Вывод каталога -->               
+                    <?php endif; ?><!-- /Вывод каталога -->
+                    
+                    
+                    
+                    
+                    
                     <!-- Вывод меню "Уроки шитья" -->
                     <?php if(URL::isSection('uroki-shitya') 
                              || URL::isSection('uroki-shitya/oborudovanie-dlya-shitya/shveynye-mashinki') 
@@ -115,7 +111,9 @@
                              || URL::isSection('uroki-shitya/oborudovanie-dlya-shitya/stabilizatory-poverhnostey') 
                              || URL::isSection('uroki-shitya/osnovnye-tehniki-shitya') 
                              || URL::isSection('uroki-shitya/izgotovlenie-detaley-izdeliy') 
-                             || URL::isSection('uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do') ) :?>         
+                             || URL::isSection('uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do') ) :?> 
+
+                    
                   
                   
                   <ul class="js_pro-accordion-menu js_uroki">
@@ -132,20 +130,40 @@
                         <li><a href="<?php echo SITE?>/uroki-shitya/osnovnye-tehniki-shitya">Основные техники шитья</a></li>
                         <li><a href="<?php echo SITE?>/uroki-shitya/izgotovlenie-detaley-izdeliy">Изготовление деталей изделий</a></li>
                         <li><a href="<?php echo SITE?>/uroki-shitya/uroki-poshiva-gotovyh-izdeliy-ot-i-do">Уроки пошива готовых изделий от и до</a></li>
-                    </ul>           
-                  <?php endif; ?><!-- /Вывод меню "Уроки шитья" -->                  
-                  <!-- Вывод меню "Голоссарий" -->
-                  <?php if(URL::isSection('golossariy') 
+                    </ul>
+                  
+                  
+                  
+                    <?php endif; ?><!-- /Вывод меню "Уроки шитья" -->
+                    
+                    
+                    
+                    
+                    
+                    <!-- Вывод меню "Голоссарий" -->
+                    <?php if(URL::isSection('golossariy') 
                              || URL::isSection('golossariy/osnovnye-tehniki-shitya') 
-                             || URL::isSection('golossariy/izgotovlenie-delaley-izdeliy') ) :?>                            
-                       <ul class="js_pro-accordion-menu js_golossariyMenu">
+                             || URL::isSection('golossariy/izgotovlenie-delaley-izdeliy') ) :?>                             
+                        
+                  
+                  
+                  		<ul class="js_pro-accordion-menu js_golossariyMenu">
                             <li><a href="<?php echo SITE?>/golossariy">Оборудование для шитья</a></li>
                             <li><a href="<?php echo SITE?>/golossariy/osnovnye-tehniki-shitya">Основные техники шитья</a></li>
                             <li><a href="<?php echo SITE?>/golossariy/izgotovlenie-delaley-izdeliy">Изготовление деталей изделий</a></li>
-                        </ul>                  
-                  <?php endif; ?><!-- /Вывод меню "Голоссарий" -->                   
-                  <!-- Блок товаров в левой колонке -->
-                    <?php if(URL::isSection('cart') || URL::isSection('order') ) :?>                   
+                        </ul>
+                  
+                  
+                  
+                    <?php endif; ?><!-- /Вывод меню "Голоссарий" -->
+                    
+                    
+                    
+                    
+                    
+                    <!-- Блок товаров в левой колонке -->
+                    <?php if(URL::isSection('cart') || URL::isSection('order') ) :?>
+                    
                     
                   
                   	<div class="product-wrapper js_productLeftBlock">
@@ -161,7 +179,10 @@
                             <div class="product-price">1 141,78 руб.</div>
                           <span class="js_addToCart">Купить</span>
                         </a>
-                    </div>                     
+                    </div>
+                       
+                  
+                  
                     <div class="product-wrapper js_productLeftBlock">
                         <a href="/nabory-dlya-shitya-platev/nabory-vysokoy-slojnosti/nabor-dlya-shitya-goluboe-plate">
                             <div class="product-stickers">
@@ -175,172 +196,56 @@
                             <div class="product-price">1 141,78 руб.</div>
                           <span class="js_addToCart">Купить</span>
                         </a>
-                    </div>                      
+                    </div>    
+                         
                   
                   
                     <?php endif; ?><!-- /Блок товаров в левой колонке -->              
                 </div><!-- end #js_left -->
-                <?php } else {?>
-                      <div style="width:960px;text-align:center"> 
-                    <div class="top1"> 
-  <div><div class="txt">Мечтаете сшить себе платье или юбку? У Вас периодически возникает желание что-то творить и созидать? <br> <br>
-Мечтаете своими руками сшить платье, юбку, брюки, но боитесь?! А вдруг не получится или испортите ткань? Или после покупки швейной машинки, скажите: “Зачем купила не попробовав шить!! <br> <br>
-Мы предлагаем Вам просто пошить выбрав простую модель! В итоге в 8 часов у Вас на руках будет готовое изделие, а в зависимости от сложности кроя возможно и не одно! <br> <br>
-Мы предлагаем Вам на выбор ткань. Ее Вы сможете выбрать на сайте. Благодаря красоте ткани Вы сможете сшить простое по крою изделие, но которое будет выглядеть красиво и  изыскано, а Вы в нем неповторимы!</div></div>
-    <div class="top1_right">
-    <div class="coner"></div>
-    <div class='h1'>Схема работы сайта &ndash;Как самостоятельно составить комплект для ШИТЬЯ:</div>
-    <div class="txt" style="">
-     1)	Выбираете сложность пошива<br>
-2)	Выбираете модель для шитья (с фото)<br>
-3)	Мы подобрали подходящие для данной модели ткани  - Вы выбираете!<br>
-4)	Мы подобрали подходящую для данной модели фурнитуру  - Вы выбираете!<br>
-5)	Добавляете если необходимо ткань для пробного пошива.<br>
-6)	<b>ПОЛУЧАЕТЕ БЕСПЛАТНО</b> ВЫКРОЙКУ данной модели <br>
-7)	<b>ПОЛУЧАЕТЕ БЕСПЛАТНО</b> инструкцию по номерам для данной модели
-       </div>
-        <div class='right-b'> <div class='ttl'>Подобрать модель и ткань для самостоятельного шитья.</div>
-        <a href="/nabory-dlya-shitya-platev"  class="button_pink" >ЖМИ!</a></div>
-  </div>   
-  </div>
-                <?}?>               
-                   <!-- Слайдер на главной -->
-                    <?php if(URL::isSection(null)): ?>
-                    <div id="js_center" style='padding-bottom:0px'>  
-                    <img border="0" src="uploads/mainp/logo-2-min.jpg" style="padding: padding:  0 0 35px;">
-                    <div class="topb2" style="">
-    <div style="" class="i1_n n">1</div>
-    <img border="0" src="uploads/mainp/girl-min.jpg" style="top: 0px; left: 52px;">
-    <div class="i1_t" style="">Разработали <br>стильные модели <br>для самостоятельного <br>шитья</div>
-    <div class="i1_p p"></div>
-    
-    <div class="i2_n n">2</div>
-    <img border="0" src="uploads/mainp/tkan-min.jpg" style="top: 110px; left: 450px;">
-    <div style="" class="i2_t">Подобрали <br> для них ткани</div>
-    <div class="i2_p p"></div>
-    
-    <div class="i3_n n">3</div>
-    <img border="0" src="uploads/mainp/vikroika2-min.jpg" style="top: 318px; left: 35px;">
-    <div class="i3_t" style="">Спроектировали<br>выкройки по<br>российским<br>лекалам</div>
-    <div class="i3_p p"></div>
-    
-    <div class="i4_n n">4</div>
-    <img border="0" src="uploads/mainp/pugov2-min.jpg" style="top: 440px; left: 410px;">
-    <div class="i4_t" style="">Дополнили<br>необходимой фурнитурой</div>
-    <div class="i4_p p"></div>
-    
-    <div class="i5_n n">5</div>
-    <div class="i5_t" style="">Написали<br>инструкцию по<br>пошиву к<br>каждой модели</div>
-  </div>
-    </div>             
-  <div id="js_center-main">  
-   <div class="top2">
-    <div class='h1'>Наше предложение<br>
-”ЛУЧШЕЕ ИЗ ВОЗМОЖНЫХ”<br>
-на сегодняшний день на рынке шитья, потому что:</div>
-    <div class="txt" style="">
-     1.	<b>ВЫ ПОЛУЧАЕТЕ БЕСПЛАТНО МОДЕЛЬ И ВЫКРОЙКУ</b> по российским лекалам на свой размер,платите только за ткань и фурнитуру.<br>
-2.	<b>МЫ УЧИМ ВАС ШИТЬ БЕСПЛАТНО</b> – К ткани, модели, выкройке и дополнительным материалам
-        прилагается пошаговая ИНСТРУКЦИЯ ПО НОМЕРАМ для новичков.  <br>
-3.	<b>МЫ УЧИТЬ ВАС ШИТЬ ПРОСТО</b> - Специально для ВАС мы сделали <span style="color: #9d265f;font-size: 18px;">ИНСТРУКЦИЮ ПО НОМЕРАМ </span>
-        предельно простой  и понятной, без швейной терминологии. Детали расписаны по номерам.
-        Прилагаются схемы и картинки. <a href="#" style="color:#9d265f">Посмотреть пример.</a><br>
-4.	<b>ВЫ ЭКОНОМИТЕ ВРЕМЯ</b>  - Все от ткани до маленькой пуговицы можно купить в одном магазине.<br>
-5.	<b>ВЫ НЕ ОШИБЕТЕСЬ С ВЫБОРОМ ТКАНИ</b> – Мы подобрали правильные ткани для моделей.
-        Купленная неподходящая ткань не лежит дома. <br>
-6.	<b>ОНЛАЙН ПОДДЕРЖКА</b>   - Кроме всего прочего ВЫ можете задать нам вопрос
-        по почте и наши высококвалифицированные швеи дадут ответ. <br>
-7.	<b>ВЫ СОШЬЕТЕ, ТО ЧТО КУПИЛИ</b> – Мы проверяли!<br>
-
-       </div>
-           
-        <div class='right-b'> <div class='ttl'>Подобрать модель и ткань для самостоятельного шитья.</div>
-        <a href="/nabory-dlya-shitya-platev"  class="button_pink" >ЖМИ!</a></div>
-  </div>  
-  </div>             
-  <div id="js_center"  style='padding-bottom:0px'> 
-  <div style="" class="topb">
-                    <!--   <div class="h">Новый вид шитья - ШИТЬЕ ПО НОМЕРАМ!</div>
-					<div class="sublogo">Хотите научиться шить? Не знаете с чего начать?<br>
-					Шейте с нами просто и быстро!!!<br>
-					<font class="txt">Закажите набор для шитья и получите:</font>
-					</div>
-					<img border="0" src="uploads/mainp/logo_sub.jpg" style=""> -->
-					
-                        <img border="0" src="uploads/mainp/logo-1-min.jpg" style="">       
-                    <div>
-                    <div class="c1" style="width: 155px;">
-                     <div class="c1inn" style="">
-                     <img border="0" style="" src="uploads/mainp/tkani-m-min.jpg">
-                      Ткань
-                      </div> 
-                    </div> 
+                
+                
+                
+                
+                
+                <div id="js_center">
                     
-                    <div style="" class="c1_p c1">     
-                    </div>
-                    <div style="width: 130px;" class="c1">
-                     <div class="c1inn">
-                     <img border="0" src="uploads/mainp/pugov-min.jpg" style="">
-                      Пуговицы
-                     </div>
-                    </div>
-                    <div class="c1_p c1">     
-                    </div>
-                    <div style="width: 135px;" class="c1">
-                      <div class="c1inn">
-                     <img border="0" src="uploads/mainp/molnii-min.jpg" style="">
-                      Молнии
-                        </div>
-                    </div>
-                    <div class="c1_p c1">     
-                    </div>
-                    <div style="width: 90px;" class="c1">
-                     <div class="c1inn">
-                     <img border="0" src="uploads/mainp/vikroika-min.jpg" style="">
-                     Выкройка
-                       </div>
-                    </div>
-                    </div>
-                    <div class="js_clear"></div>
-                   <div class="topb">
-                     <div style="float: left; line-height: 200px; font-size: 60px; padding: 20px 30px 0px 100px;">=</div>
-                      <img border="0" style="float: left;padding: 20px 0 0 0" src="uploads/mainp/k-min.jpg">
-                      <div style="" class="podarok">Готовый <br> комлект <br>для шитья <br>своими руками</div>
-                    </div>
-                  
-                     </div>
-                       </div>             
-  <div id="js_center_main"> 
-     <p>Даже с минимальным опытом в итоге Вы получите готовое изделие и удивление, что да, эту красоту сделали Вы!! И ее можно носить, дарить тепло своих рук семье, радовать мужчин, одевать детишек. Эмоции Вас будут переполнять от процесса созидания творения своими руками, а вдохновение наполнит Вас на новые идеи и желания!! 
- </p>
-	 <p>Предлагаем Вам почувствовать себя модельерами! У Вас имеется возможность выбрать ткань,  поэкспериментировать с длиной изделия, рукава,  самой выбрать глубину горловины. Вы можете пофантазировать с цветом, формой кружева, тесьмы, и др. отделкой. Выбор ткани за Вами! У нас имеются ткани красивые, разнообразные, качественные различного состава: хлопок, поплин, шелк, шифон, и др.
- </p>
-	 <p>
-	Заказав набор для шитья Вы также получите знания и навыки изготовления выбранного изделия. А также внутреннее понимание, хотите ли Вы этим заниматься профессионально.
-	 </p>
-	 <p></p>
-Мы приглашаем Вас ознакомиться с нашим сайтом, и выбрать то, чем же Вы так давно хотели заняться, но не решались. 
-</p>
-</div>
-
-                  <!--  <div class="slider-home">
+                    
+                    <!-- Слайдер на главной -->
+                    <?php if(URL::isSection(null)): ?>
+                    <img src="uploads/top-img-min.jpg" border=0>
+                    <div class="slider-home">
                         <ul>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/1.jpg" alt="image" /></li>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/2.jpg" alt="image" /></li>
                             <li><img src="<?php echo PATH_SITE_TEMPLATE ?>/images/slider-home/3.jpg" alt="image" /></li>
                           
                         </ul>
-                    </div>-->
-                    <?php endif; ?><!-- /Слайдер на главной -->
-                   <?php if(URL::isSection(null)){ ?>
-                   <div id="js_center-main" > 
-                        <?php layout('content'); ?>
-                   </div>
-                   <?} else {?>
-                    <div id="js_center" style="text-align:left">
-                        <?php layout('content'); ?>
                     </div>
-                <?}?>
+                    <?php endif; ?><!-- /Слайдер на главной -->
+                    
+                    
+                    <?php layout('content'); ?>
+                    <?php if(URL::isSection(null)): ?>
+                      <p>Платья, пожалуй, самый важный элемент женского гардероба. Они никогда не выходят из моды, всегда актуальны и подходят на любой случай. Но очень часто бывает так, что в магазинах предлагают платья, которые «не совсем то, что хотелось бы» или не подходят по цене.  Как же быть? Выход есть – сшить платье своими руками!</p>
+ <p>Сшить платье самостоятельно – это не просто, но возможно. Достаточно только большого желания научиться это делать, немного времени и купить набор для шитья в магазине «Похорошела». </p>
+<h2 class="js_contentTitle" style="">Как быстро сшить простое платье самой?</h2>
+ <p>Для этого вам понадобится выбрать набор для начинающих с понравившейся моделью и выкройкой платья. Данный набор включает в себя все, что нужно для шитья (кроме машинки). Вы вбираете модель, заказываете ее и снимаете выкройку платья в соответствии со своим размером. Немного сноровки и терпения – вуаля – платье готово!</p>
+<h2 class="js_contentTitle" style="">Что предлагает Вам магазин шитья «Похорошела»:</h2>
+	<ul class="js_list" style=""><li> </li>
+	<li> выкройки летних платьев</li>
+<li> выкройки простых платьев для начинающих</li>
+<li> выкройки деловых и офисных платьев</li>
+<li> выкройки вечерних и выпускных платьев</li>
+<li> выкройки коктейльных платьев</li>
+<li> выкройки платьев на каждый день</li>
+<li> выкройки сарафанов и многое другое.</li>
+</ul>
+
+ <p>В магазинах и на прилавках самое простое и недорогое платье стоит от 3500 руб. В нашем  магазине же Вы найдете модели и выкройки красивых, оригинальных и необычных платьев всего от 2000 руб. – и это полный набор, включая ткань! Конечно, научиться шить наряды своими руками значительно выгоднее, чем покупать готовые изделия! У нас действительно есть из чего выбрать: разнообразие тканей, фасонов, моделей – с нами Вы научитесь шить не одно платье, а разные, начиная от простых платьев до сложных модельных изделий в пол. <br>
+<b>С нашими наборами шить платья самостоятельно легко и просто!</b></p>
+                    <?php endif; ?>
+                   
+                </div>
             </article>
             
             
@@ -471,3 +376,4 @@
       
     </body>
 </html>
+<?}?>

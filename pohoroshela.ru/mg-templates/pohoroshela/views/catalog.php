@@ -58,6 +58,11 @@ mgSEO($data);
                 </div>
                 </div>
               </div>
+               <? 
+
+               if( file_exists(URL::getDocumentRoot().'/pdf/'.$item['id'].".zip")){?>
+        <div class="product-name"><br><br><a class="product-name" href = "<?php echo SITE.'/pdf/'.$item['id'].".zip" ?>">Скачать выкройку</a></div>
+        <? }?>
          </div>
        
 

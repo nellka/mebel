@@ -56,7 +56,8 @@
         <a class="js_indexProductSlideTitle" href="<?php echo SITE; ?>/group?type=latest">Новые поступления</a>
      </div>
      <div class="top3">
-      <?php foreach($data['newProducts'] as $item){
+      <?php foreach($data['newProducts'] as $item){ 
+      	// if(strpos($item["title"],"лать")==false) continue;
            $description = explode('.',strip_tags($item['description']));
           ?>
         <div class="tovar-catalog">
@@ -70,6 +71,9 @@
               </a>          
             </div>
     		<?=$description?($description[0].'.'):'';?>
+    		 <?if( file_exists(URL::getDocumentRoot().'/pdf/'.$item['id'].".zip")){?>
+    		<br><a href = "<?php echo SITE.'/pdf/'.$item['id'].".zip" ?>" style="text-decoration: underline;">Скачать выкройку</a>
+    		<?}?>
     	  </div>
     	 <div class="details"><div class="title">Наши ткани</div>
     		 <div class=tkani>
@@ -159,6 +163,7 @@
     
     <div class="top3">
       <?php foreach($data['recommendProducts'] as $item){
+      	//if(strpos($item["title"],"лать")==false) continue;
           $description = explode('.',strip_tags($item['description']));
           ?>
         <div class="tovar-catalog">
@@ -172,6 +177,9 @@
               </a>          
             </div>
     		<?=$description?($description[0].'.'):'';?>
+    		 <?if( file_exists(URL::getDocumentRoot().'/pdf/'.$item['id'].".zip")){?>
+    		<br><a href = "<?php echo SITE.'/pdf/'.$item['id'].".zip" ?>" style="text-decoration: underline;">Скачать выкройку</a>
+    		<?}?>
     	  </div>
     	 <div class="details"><div class="title">Наши ткани</div>
     		 <div class=tkani>
