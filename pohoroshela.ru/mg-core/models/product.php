@@ -1347,23 +1347,23 @@ class Models_Product {
                   $plus = OUTPUT_MARGIN=='0' ? '' : $plus;
                   $checked = '';
                   if ($i == 0) {
-                    /*$checked = ' checked="checked" ';                    
+                    $checked = ' checked="checked" ';                    
                     
                     // запоминаем дефолтное значение
-                    $defaultSet[$property['property_id'].'#'.$i] = $value;
-                    
+                   // $defaultSet[$property['property_id'].'#'.$i] = $value;
+                    $defaultSet[$property['property_id'].'#0'] = $value;
                     if ($marginStoper == $marginPrice) {
                       $marginPrice += $valueArr['margin'];
                       $isExistSelected = true;
-                    }*/
+                    }
                   };
                   
                   $photo_block ="";
                   if($photo) $photo_block = '<a class="fancy-modal" title="'.$photo_title.'" rel="gallery" href="http://pohoroshela.ru/uploads/tkani/'.$photo_full.'">
 <img title="" alt="" src="http://pohoroshela.ru/uploads/tkani/'.$photo.'" data-transfer="true" width=120 ></a>';
-
+//$property['property_id'].'#'.$i.'
                   $htmlButtonList .= '<div class="propVar"><input type="radio" name="'.
-                    $property['property_id'].'#'.$i.'" value="'.$value.'" '.$checked.'>'
+                    $property['property_id'].'#0" value="'.$value.'" '.$checked.'>'
                     .$photo_block
                     .'<span class="label-black">'
                     //. $valueArr['name'].'<br>'
@@ -1561,7 +1561,8 @@ class Models_Product {
    */
   public function addMarginToProp($margin, $rate = 1, $currency = false) {
     $currency = $currency ? $currency : MG::getSetting('currencyShopIso');
-    $symbol = '+';
+   // $symbol = '+';
+    $symbol ="";
     if (!empty($margin)) {
       if ($margin < 0) {
         $symbol = '-';
@@ -1614,7 +1615,9 @@ class Models_Product {
     }
 
     $cart = new Models_Cart;
+   
     $property = $cart->createProperty($_POST);
+    //var_dump($property);
     $product['currency_iso'] = $product['currency_iso']?$product['currency_iso']:$currencyShopIso;
     $product['price'] = $product['price_course']; 
     $product['price'] = SmalCart::plusPropertyMargin($product['price'], $property['propertyReal'], $currencyRate[$product['currency_iso']]);

@@ -95,7 +95,7 @@ class Models_Cart {
     unset($arr['updateCart']);
     unset($arr['delFromCart']);
     unset($arr['propertySetId']);
-    
+    unset($arr['calcPrice']);
 
 
     $property = ''; // Фиктивная информация о характеристиках, выводимая в публичной части, в понятном пользователям виде.
@@ -110,15 +110,15 @@ class Models_Cart {
         // Получили данные из ключа, теперь по ним можно достать реальную информацию о добавочной стоимости пункта.
         $keyParse = array('property_id' => $matches[1], 'numberElement' => $matches[2]);
       }
-
+        
+      
       // В значении тоже может передаваться дополнительная стоимость, это если доступен только один пункт (select и radiobutton).
       $valueParse = array();
       preg_match($pattern, $value, $matches);
       if (isset($matches[1]) && isset($matches[2])) {
         // Получили данные из ключа, теперь по ним можно достать реальную информацию о добавочной стоимости пункта.
         $valueParse = array('property_id' => $matches[1], 'numberElement' => $matches[2]);
-      }
-
+      }    
       $parseData = null;
       // Если и ключ и значение удалось распарсить, приоритет ключу.
       if (!empty($keyParse)) {
@@ -126,7 +126,11 @@ class Models_Cart {
       } elseif (!empty($valueParse)) {
         $parseData = $valueParse;
       }
-
+        
+      if(in_array($keyParse['property_id'],array(60,61,63))){
+             unset($parseData);
+              //return array('property' => $property, 'propertyReal' => $propertyReal);
+       }
       // Если ключ расшифрован найден, надо дописывать добавочные стоимости.
       if (!empty($parseData)) {
        
@@ -159,8 +163,19 @@ class Models_Cart {
           $propertyReal.= '<div class="prop-position"> <span class="prop-name">'.$realName.': '.str_replace('_', ' ', $data['name']).'</span> <span class="prop-val"> '.$realVal.'</span></div>';
         }
       } else {
+        if(in_array($keyParse['property_id'],array(60,61,63))){
+           
+           $realName =($productId==63)? "Ткани для блузок":(($productId==60)? "Ткани для платьев":"Ткани для юбок");
+           $data_v = explode("#",$value);
+           $property .= '<div class="prop-position"> <span class="prop-name">'.$realName.': '.str_replace('_', ' ', $data_v[0]).'</span> <span class="prop-val"> '.$data_v[1].' руб.</span></div>';
+          $propertyReal.= '<div class="prop-position"> <span class="prop-name">'.$realName.': '.str_replace('_', ' ', $data_v[0]).'</span> <span class="prop-val"> '.$value.'</span></div>';
+             //unset($keyParse);
+              //return array('property' => $property, 'propertyReal' => $propertyReal);
+          
+        } else {
         // Иначе, выбрана обычная характеристика без стоимости.
         $property .= '<div class="prop-position"> <span class="prop-name">'.str_replace('_', ' ', $key).'</span>: <span class="prop-val">'.$value.'</span></div>';
+        }
       }
     }
 
