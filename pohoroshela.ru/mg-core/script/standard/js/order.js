@@ -41,6 +41,7 @@ $(document).ready(function() {
 
   // действия при оформлении заказа
   $('body').on('click', '.delivery-details-list input', function() {
+  	
     $("p#auxiliary").html('');
     $('.delivery-details-list input[name=delivery]').parent().addClass('noneactive');
     $('.delivery-details-list input[name=delivery]').parent().removeClass('active');
@@ -77,10 +78,14 @@ $(document).ready(function() {
         $('.payment-details-list').html(paymentTable);
         $('.loader').remove();
         $('.payment-details-list input[name=payment]').prop("checked", false);
-        if ($('.payment-details-list input[name=payment]').length == 1) {
-          disabledToOrderSubmit(false);
-          $('.payment-details-list input[name=payment]').prop("checked", true);
+        if ($('.payment-details-list input[name=payment]').length == 1) {         
+          $('.payment-details-list input[name=payment]').prop("checked", true);          
+        } else {
+        	$('.payment-details-list input[name=payment]').first().prop("checked", true);        
         }
+        disabledToOrderSubmit(false);
+        $('.payment-details-list input[name=payment]:checked').click();
+         
         if (response.summDelivery) {
           $('.summ-info .delivery-summ').html('+ доставка: <span class="order-summ">' + response.summDelivery + ' </span> ');
         }
@@ -124,4 +129,5 @@ $(document).ready(function() {
       $('input[name=toOrder]').addClass('disabled-btn');
     }
   }
+  $('.delivery-details-list input[name=delivery]:checked').click();
 }); 

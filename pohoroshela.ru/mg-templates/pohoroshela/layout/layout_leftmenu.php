@@ -1,15 +1,20 @@
-<ul class="js_pro-accordion-menu">
-    <?php foreach ($data['categories'] as $category): ?>
+<ul class="js_pro-accordion-menu"> 
+    <?php 
+    foreach ($data['categories'] as $category): ?>
         <?php if ($category['invisible'] == "1") { continue;} ?>
 
         <?php if (SITE.URL::getClearUri() === $category['link']) {
             $active = 'active';
         } else {
             $active = '';
-        } ?>
+        } 
+        ?>
 
-        <?php if (isset($category['child'])): ?>
-            <?php /** если все вложенные категории неактивны, то не создаем вложенный список UL */ $slider = 'slider'; $noUl = 1; foreach($category['child'] as $categoryLevel1){$noUl *= $categoryLevel1['invisible']; } if($noUl){$slider='';}?>
+        <?php if (isset($category['child'])){ ?>
+            <?php /** если все вложенные категории неактивны, то не создаем вложенный список UL */
+             $slider = 'slider';
+             $noUl = 1; 
+             foreach($category['child'] as $categoryLevel1){$noUl *= $categoryLevel1['invisible']; } if($noUl){$slider='';}?>
 
             <li class="<?php echo $active ?> <?php if(!empty($category['image_url'])): ?>cat-img<?php endif; ?>">
                 <a href="<?php echo $category['link']; ?>">
@@ -104,7 +109,9 @@
                     <?php endforeach; ?>
                 </ul>
             </li>
-        <?php else: ?>
+        <?php } else{
+        	//if(URL::getClearUri() == '/group'||URL::getClearUri() == '/recommend') continue;
+        	?>
             <li class="<?php echo $active ?> <?php if(!empty($category['image_url'])): ?>cat-img<?php endif; ?>">
                 <a href="<?php echo $category['link']; ?>">
                     <?php if(!empty($category['image_url'])): ?>
@@ -112,10 +119,12 @@
                         <img src="<?php echo SITE.$category['image_url'];?>">
                     </span>
                     <?php endif; ?>
-                    <?php echo MG::contextEditor('category', $category['title'], $category["id"], "category"); ?>
-                    <?php echo $category['insideProduct']?'('.$category['insideProduct'].')':''; ?>
+                    <?php //echo MG::contextEditor('category', $category['title'], $category["id"], "category"); ?>
+                    <?php //echo $category['insideProduct']?'('.$category['insideProduct'].')':''; ?>
                 </a>
             </li>
-        <?php endif; ?>
+        <?php }; ?>
     <?php endforeach; ?>
+    <li><a href="<?php echo SITE; ?>/group?type=latest">Новые поступления</a></li>
+    <li><a href="<?php echo SITE; ?>/group?type=recommend">Самые продаваемые</a></li>
 </ul>

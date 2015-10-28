@@ -907,7 +907,7 @@ class Models_Product {
           'string' - пара ключь значение
           'assortmentCheckBox' - набор чекбоксов
          */
-    
+
         switch ($property['type']) {
 
           case 'select': {
@@ -1187,14 +1187,13 @@ class Models_Product {
 
           case 'assortment': {
               $marginStoper = $marginPrice;
-          
+                  
                 $property['value'] = $property['value']?$property['value']:$property['default'];
                
                 $property['property_id'] = $property['property_id']?$property['property_id']:$property['id'];
                 
                 $collection = explode('|', $property['value']);
-           
-                      
+          		//$collection = explode('|', $property['data']);                      
                 //natcasesort($collection);
                 $i = 0;               
                 $firstLiMargin = 0;
@@ -1203,14 +1202,14 @@ class Models_Product {
                 foreach ($collection as $value) {   
                     $tempVar = $this->parseMarginToProp($value);
                     if($tempVar['name']){
-                      $collectionParse[$tempVar['name']]  =  $tempVar['margin'];                      
+                      $collectionParse[$tempVar['name']]  =  $tempVar['margin'];                                      
                     }else{
                       $collectionParse[$value]  =  0;                          
                     }
+                    
                 }
                 
-                
-               
+                            
             
                 $collectionAccess = array(); // допустимый актуальный перечень
                 foreach (explode('|', $property['product_margin']) as $value) {   
@@ -1233,7 +1232,6 @@ class Models_Product {
                
                
                 $htmlSelect = '<p><span class="property-title">'.$property['name'].'</span>:<select name="'.$property['name'].'" class="last-items-dropdown">';
-                
             
         
                 foreach ($collectionAccess as $value) {   
@@ -1294,20 +1292,50 @@ class Models_Product {
 
               // Для типа вывода radiobutton :              
               if ($property['type_view'] == 'radiobutton') {
+              	
                 if ($property['value'] == 'null') {
                   break;
                 }
-                $htmlRadiobutton = '<span class="property-title">'.$property['name'].'</span>:<br/>';
-
-                $collection = explode('|', $property['value']);
-                //natcasesort($collection);
+                //$htmlRadiobutton = '<span class="property-title">'.$property['name'].'</span>:<br/>';
+                $htmlRadiobutton ="";
+                /*$collection = explode('|', $property['data']);
+                //natcasesort($collection);               
+                   
+                 foreach ($collection as $value) {   
+                    $tempVar = $this->parseMarginToProp($value);
+                    if($tempVar['name']){
+                      $collectionParseAll[$tempVar['name']]  =  $tempVar['margin'];    
+                      $collectionParseAll[$tempVar['name']."_photo"]  =  $tempVar['photo'];                        
+                    }else{
+                      $collectionParseAll[$value]  =  0;                          
+                    }
+                    
+                }*/
                 $i = 0;
                 $htmlButtonList = '';
+                
+                $collection = explode('|', $property['value']);
+                foreach ($collection as $value) {   
+                    $tempVar = $this->parseMarginToProp($value);
+                    if($tempVar['name']){
+                      $collectionParse[$tempVar['name']]  =  $tempVar['margin'];    
+                      $collectionParse[$tempVar['name']."_photo"]  =  $collectionParseAll[$tempVar['name']."_photo"];                        
+                    }else{
+                      $collectionParseAll[$value]  =  0;                          
+                    }
+                    
+                }
                 
                foreach ($collectionAccess as $value) {
                   if(!array_key_exists($value,$collectionParse)){
                     continue; 
                   }
+                  $property_data = $this->getPropertyDetails($value, $property['id']);
+                  
+                    //var_dump($value,$property['id']);
+                  $photo = $property_data?$property_data["image"]:"";
+                  $photo_full = ($property_data&&$property_data["image_full"])?$property_data["image_full"]:$photo;
+                  $photo_title = $property_data?$property_data["description"]:"";
                   $value = $value."#".$collectionParse[$value]."#";
                   
                   $valueArr = $this->parseMarginToProp($value);
@@ -1319,7 +1347,7 @@ class Models_Product {
                   $plus = OUTPUT_MARGIN=='0' ? '' : $plus;
                   $checked = '';
                   if ($i == 0) {
-                    $checked = ' checked="checked" ';                    
+                    /*$checked = ' checked="checked" ';                    
                     
                     // запоминаем дефолтное значение
                     $defaultSet[$property['property_id'].'#'.$i] = $value;
@@ -1327,12 +1355,19 @@ class Models_Product {
                     if ($marginStoper == $marginPrice) {
                       $marginPrice += $valueArr['margin'];
                       $isExistSelected = true;
-                    }
+                    }*/
                   };
+                  
+                  $photo_block ="";
+                  if($photo) $photo_block = '<a class="fancy-modal" title="'.$photo_title.'" rel="gallery" href="http://pohoroshela.ru/uploads/tkani/'.$photo_full.'">
+<img title="" alt="" src="http://pohoroshela.ru/uploads/tkani/'.$photo.'" data-transfer="true" width=120 ></a>';
 
-                  $htmlButtonList .= '<input type="radio" name="'.
-                    $property['property_id'].'#'.$i.'" value="'.$value.'" '.$checked.'>
-                    <span class="label-black">'.$valueArr['name'].$plus.'</span><br>';
+                  $htmlButtonList .= '<div class="propVar"><input type="radio" name="'.
+                    $property['property_id'].'#'.$i.'" value="'.$value.'" '.$checked.'>'
+                    .$photo_block
+                    .'<span class="label-black">'
+                    //. $valueArr['name'].'<br>'
+                    .$plus.'</span></div>';
                   
                   $secctionCartNoDummy[$property['property_id']][$i++] = array(
                     'value' => $value,
@@ -1457,6 +1492,17 @@ class Models_Product {
     return $html;
   }
 
+  public function getPropertyDetails($title, $property_id) {
+      $result = array();
+      $res = DB::query('SELECT  * 
+       FROM `'.PREFIX.'property_details` 
+       WHERE property_id = "'.$property_id.'" and title = "'.$title.'"');
+
+      if (!empty($res)) {
+          $result = DB::fetchAssoc($res);         
+      }
+      return $result;
+  }
   /**
    * Формирует массив блоков варинтов товаров на странице каталога.
    * Метод создан для сокращения количества запросов к БД.
@@ -1534,11 +1580,16 @@ class Models_Product {
    */
   public function parseMarginToProp($value) {
     $array = array();
-    $pattern = "/^(.*)#([\d\.\,-]*)#$/";
+   /* $pattern = "/^(.*)#([\d\.\,-]*)#$/";
     preg_match($pattern, $value, $matches);
     if (isset($matches[1]) && isset($matches[2])) {
       $array = array('name' => $matches[1], 'margin' => $matches[2]);
-    }
+    }*/
+   
+    $matches = explode("#",$value);
+    if(isset($matches[0])){
+    	$array = array('name' => $matches[0], 'margin' => isset($matches[1])?$matches[1]:"",'photo' =>isset($matches[2])?$matches[2]:"");
+    }  
     return $array;
   }
 
