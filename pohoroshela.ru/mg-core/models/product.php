@@ -1336,14 +1336,15 @@ class Models_Product {
                   $photo = $property_data?$property_data["image"]:"";
                   $photo_full = ($property_data&&$property_data["image_full"])?$property_data["image_full"]:$photo;
                   $photo_title = $property_data?$property_data["description"]:"";
-                  $value = $value."#".$collectionParse[$value]."#";
+                  $price_from_base = ($property_data["price"]*3+300)*3;
+                  $value = $value."#".$price_from_base."#";
                   
                   $valueArr = $this->parseMarginToProp($value);
                   
                   if (empty($valueArr)) {
                     $valueArr = array('name' => $value, 'margin' => 0);                    
                   }
-                  $plus = $this->addMarginToProp($valueArr['margin'], $currencyRate, $currencyShort);
+                  $plus = $this->addMarginToProp($valueArr['margin'], $currencyRate, $currencyShort,$price_from_base);
                   $plus = OUTPUT_MARGIN=='0' ? '' : $plus;
                   $checked = '';
                   if ($i == 0) {
@@ -1559,10 +1560,14 @@ class Models_Product {
    * @param $valueArr - массив с наценкой
    * @return  $array - массив с разделенными данными, название пункта и стоимость.
    */
-  public function addMarginToProp($margin, $rate = 1, $currency = false) {
+  public function addMarginToProp($margin, $rate = 1, $currency = false,$base_value= null) {
     $currency = $currency ? $currency : MG::getSetting('currencyShopIso');
    // $symbol = '+';
     $symbol ="";
+    if($base_value){
+        $margin = $base_value;
+    } 
+    
     if (!empty($margin)) {
       if ($margin < 0) {
         $symbol = '-';
