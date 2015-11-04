@@ -10,7 +10,7 @@ var userProperty = (function() {
   return {
     delimetr: "|",
     listCategoryConnect:[],// список уже привязанных категорий, заполняется при открытии связей характеристик
-    init: function() {
+    init: function() {	
 
       // редактирования строки свойства
       $('body').on('click', '.userPropertyTable .edit-row', function() {
@@ -368,7 +368,7 @@ var userProperty = (function() {
     convertCategoryIdToOption: function(selectedCatIds) {
       htmlOptionsSelected = selectedCatIds.split(',');
     
-      function buildOption(element, index, array) {
+      function buildOption(element, index, array) {      	
         $('select[name="listCat"] [value="' + element + '"]').prop('selected', 'selected');
         
         userProperty.listCategoryConnect.push(element);
@@ -617,12 +617,15 @@ var userProperty = (function() {
     },
     //Сохраняет редактирование
     saveEditRow: function(id) {
-        
+    	
       // пересчет наценок для дефолтных хначений
       var newdefval = '';
-      $('.userPropertyTable tr[id=' + id + ']').find('.is-defaultVal .prop').each(function() {           
+      $('.userPropertyTable tr[id=' + id + ']').find('.is-defaultVal .prop').each(function() {   
+   
         newdefval += $(this).find('.propertyDataName').text()+'#'+$(this).find('input').val()+'#'+userProperty.delimetr;         
       });
+      
+     
       newdefval = newdefval.slice(0, -1);
       userProperty.setDefVal(id, newdefval); 
         
@@ -636,11 +639,12 @@ var userProperty = (function() {
       type.html('<span value="' + typeVal + '">' + userProperty.typeToRead(typeVal) + '</span>');
 
       var data = $('.userPropertyTable tr[id=' + id + '] td[class=data]');
-
+ 
       // если выбран тип перечень, то не сохраняем стоимости
       if (typeVal == 'assortmentCheckBox') {      
         $('.userPropertyTable tr[id=' + id + '] .setMargin input').val('');
       }
+    
 
       if (typeVal == 'string') {
         var dataVal = data.find('input').val();	
@@ -652,12 +656,12 @@ var userProperty = (function() {
         userProperty.dataUpdateItem(data, dataVal, id, true);
       }
 
-
       var def = $('.userPropertyTable tr[id=' + id + '] td[class=default]');
       var defVal = def.text();
-
       var description = $('.userPropertyTable tr[id=' + id + '] td[class=description] textarea').val();
       var typefilter = $('.userPropertyTable tr[id=' + id + '] td[class=typefilter] select').val();
+
+     
       // удаляем обработчик показа установки дефолтного значения
       $('.itemData').unbind();
       $('.list-prop').unbind();
@@ -829,7 +833,7 @@ var userProperty = (function() {
         for (var i = 0; i <= strArr.length - 1; i++) {
           if (strArr[i]) {
             var clas = 'itemData';
-            var propertyData = userProperty.getMarginToProp(strArr[i]);      
+            var propertyData = userProperty.getMarginToProp(strArr[i]);   
             if ($.inArray(propertyData.name, defval) != -1) {
               var clas = 'itemData is-defaultVal';
             }
@@ -842,7 +846,7 @@ var userProperty = (function() {
             var currency = admin.CURRENCY;
         
             html += '<div class="' + clas + '" '+hide+'><div class="prop"><span class="propertyDataName" style="cursor:move">' + admin.htmlspecialchars(admin.htmlspecialchars_decode(propertyData.name)) + '</span>\
-                      <span class="setMargin" style="display:none" > + <input type="text" value="' + propertyData.margin + '"/> ' + admin.CURRENCY + ' </span>\
+                      <span class="setMargin" style="display:none" > + <input type="text" value="' + propertyData.margin + '"/> ' + admin.CURRENCY + ' <input style="width:120px" type="text" value="' + propertyData.propPhoto + '"/> </span>\
                       <a href="javascript:void(0);" onclick="return false" class="delItem" data-propid="' + propId + '" data-number="' + i + '" style="display:' + display + '">X</a>\
                     </div>\
                      <!-- <a href="#" onclick="return false" class="setDefaultVal tool-tip-bottom" style="display:none" title="'+lang.SETUP_DEFAULT+'" data-value="' + admin.htmlspecialchars(admin.htmlspecialchars_decode(propertyData.name)) + '">'+lang.SETUP_DEFAULT+'</a>-->\
@@ -862,10 +866,13 @@ var userProperty = (function() {
      */
     getMarginToProp: function(str) {
       str = admin.htmlspecialchars(str);
-      var margin = /#([\d\.\,-]*)#$/i.exec(str);      
-      var parseString = {name: str, margin: 0}
+     // var margin = /#([\d\.\,-]*)#$/i.exec(str);      
+      var parseString = {name: str, margin: 0,propPhoto:""}
+      var margin = str.split('#');
+     
       if (margin != null) {
-        parseString = {name: str.slice(0, margin.index), margin: margin[1]}
+        //parseString = {name: str.slice(0, margin.index), margin: margin[1]}
+        parseString = {name: margin[0]?margin[0]:"", margin: margin[1]?margin[1]:"",propPhoto: margin[2]?margin[2]:""}
       }    
       return parseString;
     },
@@ -951,21 +958,18 @@ var userProperty = (function() {
         hiddenDataText = "";    
      
         $('.userPropertyTable tr[id=' + propId + '] .itemData ').each(function() {
-
-          //если в поле введено число болье нуля то записываем его к характеристикам
-          var margin = $(this).find('input[type=text]').val();
-          if (margin * 1 != 0 && !isNaN(margin)) {
-            margin = '#' + margin + '#';
-          } else {
-            margin = "";
-            
-            if(type=='select'){
-              margin = "#0#";
-            }
-            
-          }
-          hiddenDataText += $(this).find('.propertyDataName').text() + margin + userProperty.delimetr;
-          // console.log($(this).find('.propertyDataName').text()+margin);
+		var margin = "";
+        	$(this).find('input[type=text]').each(function(){
+        		var marg = this.value;	         
+	          	//if (marg * 1 != 0 && !isNaN(marg)) {
+	          	if (marg) {
+	            	margin += '#' + marg;
+	          	} else if(type=='select'){
+	              margin += "#0";
+	           	}
+        	});       
+         	if(margin)  margin += "#";
+        	hiddenDataText += $(this).find('.propertyDataName').text() + margin + userProperty.delimetr;
         });
         hiddenDataText = hiddenDataText.slice(0, -1);
       }
@@ -1141,7 +1145,7 @@ var userProperty = (function() {
         var dataProp = userProperty.getMarginToProp(element);
         element = dataProp.name;
         var margin = dataProp.margin;
-
+ 		var photo = dataProp.propPhoto;
         htmlOptionsSetup.forEach(function(item, index, array) {
           if (item.name == element) {
             margin = item.margin;
@@ -1165,9 +1169,28 @@ var userProperty = (function() {
             selected = 'selected="selected"';
           }
         }
-        htmlOptions += '<option ' + selected + ' value="' + element + '#' + margin + '#">' + element + '</option>';
+        htmlOptions += '<option ' + selected + ' data-img="/uploads/tkani/' + photo + '" value="' + element + '#' + margin + '#">' + element + '</option>';
       }
       
+      function addToolTip(){
+      	var tooltip = $('#select_tooltip');		
+		var calc = $('.last-items-dropdown');
+		var posLeft = calc.offset().left + calc.width();
+		$('option[data-img]', calc).on({		    
+		    mouseenter: function (e) {
+		        $('img', tooltip).attr('src', $(this).data('img'));
+		        tooltip.finish()
+		        .css({
+		            top: e.pageY,
+		            left: posLeft
+		        })
+		        .fadeIn();
+		    },
+		    mouseleave: function () {
+		        tooltip.fadeOut();
+		    }
+		});
+      }
 
       //строит html элементы из полученных данных
       function buildElements(property, index, array) {        
@@ -1196,7 +1219,7 @@ var userProperty = (function() {
           var multiple = (property.type == 'assortment')?'multiple':'';// определяем будет ли строиться мульти список или обычный
           
           html = '<tr><td><span class="custom-text">' + property.name + ': </span></td>'
-               + '<td><select class="property last-items-dropdown" name="' + property.id + '"'+multiple+'>';
+               + '<td><select class="property last-items-dropdown" size=22  name="' + property.id + '"'+multiple+'>';
           // обнуляем список опций
           htmlOptions = '';
           
@@ -1235,7 +1258,7 @@ var userProperty = (function() {
           html += htmlOptions;
        
           // закрываем селект
-          html += '</select>\
+          html += '</select><div id="select_tooltip"><img src="" alt=""></div>\
             ';
             // формируем панель кнопок устанавливающих тот или иной тип вывода характеристики
           html += '<div class="fixed-panel-margin"><a href="javascript:void(0);" class="setup-margin-product tool-tip-bottom" title="'+lang.T_TIP_SETUP_MARGIN+'" ><span>'+lang.SETUP_MARGIN+'</span></a>';
@@ -1304,6 +1327,7 @@ var userProperty = (function() {
       allProperty.forEach(buildElements);
      
       container.html('<table class="user-field-table"><tbody>' + htmlUserField + '</tbody></table>');
+      addToolTip();
 
     },
         

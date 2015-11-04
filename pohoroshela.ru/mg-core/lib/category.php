@@ -50,11 +50,12 @@ class Category {
       }
           
       // получаем количесво товаров для каждой категории
-      $res = DB::query("SELECT cat_id, count(id) as count FROM `".PREFIX."product` GROUP BY cat_id");     
+      $res = DB::query("SELECT cat_id, count(id) as count FROM `".PREFIX."product` where activity=1 GROUP BY cat_id");     
       while ($row = DB::fetchAssoc($res)) {  
         $this->categories[$row['cat_id']]['countProduct'] = $row['count'];    
+        //var_dump($row['cat_id'], $row['count']);
       }
-
+    
        // для каждой категории получаем массив пользовательских характеристик
       $res = DB::query("
           SELECT p.*, c.category_id
@@ -500,7 +501,10 @@ class Category {
    * @return array
    */
   public function getHierarchyCategory($parent = 0, $onlyActive=false) {
+    $onlyActive=true;
+    
     $catArray = array();
+
     if (!empty($this->categories))
       foreach ($this->categories as $category) {       
         if(!isset($category['id'])){break;}//если категории неceotcndetn
@@ -510,13 +514,14 @@ class Category {
          
           if ($parent==$category['parent']) {
             $child = $this->getHierarchyCategory($category['id']);
-
+           
             if (!empty($child)) {
               $array = $category;          
               usort($child, array(__CLASS__, "sort"));        
               $array['child'] = $child; 
               
-              foreach($child as $item){
+              foreach($child as $item){     
+      
                 $array['insideProduct'] += $item['insideProduct'];
               }
               $array['insideProduct'] += $category['countProduct'];

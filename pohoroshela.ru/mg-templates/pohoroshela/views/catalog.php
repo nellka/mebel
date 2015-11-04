@@ -29,21 +29,24 @@ mgSEO($data);
                 <span class="product-old-price" <?php echo (!$item['old_price'])?'style="display:none"':'style="display:block"' ?>>
                   <?php echo $item["old_price"] ?> <?php echo $data['currency']; ?>
                 </span>
+                <? if($item["price"]){?>
                 <span class="product-default-price">
                   <?php echo priceFormat($item["price"]) ?> <?php echo $data['currency']; ?>
                 </span>
+                <?}?>
               </div>
-    
+     <? if($item["price"]){?>
               <div class="product-buttons">
                 <!--Кнопка, кототорая меняет свое значение с "В корзину" на "Подробнее"-->
                 <?php echo $item['buyButton']; ?>
     
               </div>
+              <?}?>
             </div>
         </div>
          <div class="product-left">
              <div class="product-name">
-              <a href="<?php echo SITE ?>/<?php echo isset($item["category_url"])?$item["category_url"]:'catalog' ?>/<?php echo $item["product_url"] ?>">Комплект для пошива своими руками <br><?php echo $item["title"] ?></a>
+              <a href="<?php echo SITE ?>/<?php echo isset($item["category_url"])?$item["category_url"]:'catalog' ?>/<?php echo $item["product_url"] ?>">Выкройка <?php echo $item["title"] ?></a>
             </div>
             <div class="info">
              <div class="in-complect"><b> В комплекте:</b></div>
@@ -58,6 +61,9 @@ mgSEO($data);
                 </div>
                 </div>
               </div>
+
+        <div class="product-name"><br><br><a class="product-name" href = "<?php echo SITE ?>/<?php echo isset($item["category_url"])?$item["category_url"]:'catalog' ?>/<?php echo $item["product_url"] ?>">Скачать выкройку</a></div>
+
          </div>
        
 
@@ -69,6 +75,9 @@ mgSEO($data);
 
     <div class="js_clear"></div>
 
+  <?php 
+  echo $data["cat_desc"];?>
+    <div class="js_clear"></div>
   <?php echo $data['pager']; ?>
   <!-- Верстка поиска -->
 <?php else: ?>
@@ -98,6 +107,7 @@ mgSEO($data);
         <div class="product-description">
           <?php echo MG::textMore($item["description"], 240) ?>
         </div>
+        <?if($item["price"]){?>
         <div class="product-footer">
           <div class="product-price">
             <span class="product-old-price" <?php echo (!$item['old_price'])?'style="display:none"':'style="display:block"' ?>>
@@ -111,6 +121,7 @@ mgSEO($data);
             <?php echo $item['buyButton']; ?>
           </div>
         </div>
+        <?}?>
         <div class="clear"></div>
       </div>
     <?php endforeach; ?>

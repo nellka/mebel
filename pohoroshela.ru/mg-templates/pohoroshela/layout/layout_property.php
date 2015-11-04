@@ -1,6 +1,7 @@
 <?php 
 echo $data['blockVariants']; ?>
 <?php echo $data['addHtml']; ?>
+<div class="clear"></div>
 <div class="buy-container">
   <?php if(!$data['noneAmount']){ ?>
     <div class="hidder-element" <?php echo ($data['maxCount']=="0"?'style="display:none"':'') ?> >
@@ -48,7 +49,7 @@ echo $data['blockVariants']; ?>
           <?php echo $data['titleBtn']; ?>
 
           </a>
-
+         
           <input type="submit" name="buyWithProp" onclick="return false;" style="display:none">
         <?php
         }

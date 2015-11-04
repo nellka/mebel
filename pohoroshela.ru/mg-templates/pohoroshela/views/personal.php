@@ -190,16 +190,16 @@ case 3: $userInfo = $data['userInfo']
                     </div>
                     <div class="js_sectionButton">
                         <?php if (2 > $order['status_id']): ?>
-                        <div class="order-settings">
+                       <!-- <div class="order-settings">
                             <form  method="POST" action="<?php echo SITE ?>/order">
                                 <input type="hidden" name="orderID" value="<?php echo $order['id'] ?>">
                                 <input type="hidden" name="orderSumm" value="<?php echo $order['summ'] ?>">
                                 <input type="hidden" name="paymentId" value="<?php echo $order['payment_id'] ?>">
-                                <?php if($order['payment_id']!=3): ?>
+                                <?php /*if($order['payment_id']!=3): ?>
                                 <button type="submit" name="pay" value="go" class="default-btn uk-button uk-button-success uk-button-large">Оплатить заказ</button>
-                                <?php endif; ?>
+                                <?php endif;*/ ?>
                             </form>
-                        </div>
+                        </div>-->
                         <?php endif; ?>
                         <?php if ($order['status_id'] < 2): ?>
                         <div class="order-settings">
@@ -207,9 +207,9 @@ case 3: $userInfo = $data['userInfo']
                             Отменить заказ
                             </button>
                             <br/>
-                            <button class="change-payment uk-button uk-button-small" id="<?php echo $order['id'] ?>" date="<?php echo date('d.m.Y', strtotime($order['add_date'])) ?>" data-number="<?php echo $order['number'] != ''? $order['number']: $order['id'];?>" href="#changePayment">
+                           <!-- <button class="change-payment uk-button uk-button-small" id="<?php echo $order['id'] ?>" date="<?php echo date('d.m.Y', strtotime($order['add_date'])) ?>" data-number="<?php echo $order['number'] != ''? $order['number']: $order['id'];?>" href="#changePayment">
                             Изменить способ оплаты
-                            </button>
+                            </button>-->
                         </div>
                         <?php endif; ?>
                     </div>
@@ -245,12 +245,12 @@ case 3: $userInfo = $data['userInfo']
                     <!--Эта часть появляется после закрытия заказа без перезагрузки страницы-->
                     <div class="successful-closure" id="errorModal">Ошибка</div>
                 </div>
-                <!--Смена способа оплаты заказа-->
+                <!--Смена способа оплаты заказа
                 <div class="change-payment">
                     <div class="close-reason-wrapper" id="changePayment">
                         <p class="order-number">Выберите способ оплаты для заказа <br /> № <strong name="orderId" class="orderId"></strong> от <span class="orderDate"></span></p>
                         <select class="order-changer-pay">
-                            <?php
+                            <?php /*
                             foreach ($data['paymentList'] as $item) {
                             if (empty($item)) {
                             continue;
@@ -261,12 +261,12 @@ case 3: $userInfo = $data['userInfo']
                             } else {
                             echo "<option value='".$item['id']."'>".$item['name'].'</option>';
                             }
-                            }
+                            }*/
                             ?>
                         </select>
                         <button type="submit" class="change-payment-btn default-btn" >Применить</button>
                     </div>
-                </div>
+                </div>-->
             </div>
             <?php else: ?> <!-- if($data['orderInfo']) -->
             <br><span>У вас нет заказов</span>
@@ -291,16 +291,17 @@ $('strong[class=orderId]').attr('data-id-order', $(this).attr('id'));
 $('strong[class=orderId]').text($(this).attr('data-number'));
 $('span[class=orderDate]').text($(this).attr('date'));
 });
+/*
 //Инициализация fancybox
 $(".change-payment,.close-order, a.fancy-modal").fancybox({
 'overlayShow': false
-});
+});*/
 //Инициализация табов в личном кабинете
 $('.personal-tabs').tabs();
 //Инициализация fancybox
-$(".change-payment,.close-order, a.fancy-modal").fancybox({
+/*$(".change-payment,.close-order, a.fancy-modal").fancybox({
 'overlayShow': false
-});
+});*/
 var tabCookieName = "mytabs";
 $(".personal-tabs").tabs({
 active: ($.cookie(tabCookieName) || 0),
@@ -340,7 +341,8 @@ $('a[name=error]').click();
 });
 });
 //Смена способа оплаты в ЛК
-$('.change-payment-btn').click(function () {
+
+/*$('.change-payment-btn').click(function () {
 var paymetId = $(this).parent().find('.order-changer-pay').val();
 var paymetName = $(this).parent().find('.order-changer-pay option:selected').text();
 var id = $(this).parent('#changePayment').find('strong[name=orderId]').data('id-order');
@@ -359,7 +361,7 @@ dataType: 'json',
 success: function (response) {
 }
 });
-});
+});*/
 $('.form-list select[name="customer"]').change(function () {
 if ($(this).val() == 'fiz') {
 $('.form-list.yur-field').hide();

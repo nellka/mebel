@@ -53,6 +53,7 @@
     }
   }
   else{
+  //	var_dump( $_POST,$data['step']);
     switch($data['step']){
       case 1:
         mgSEO($data);

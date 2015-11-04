@@ -359,8 +359,10 @@ class Controllers_Order extends BaseController {
     if (1 === count($result)) {
       $deliveryId = array_keys($result);
       $result[$deliveryId[0]]['checked'] = 1;
+    } elseif (!isset($_POST['delivery'])) {
+    	$deliveryId = array_keys($result);
+      	$result[$deliveryId[0]]['checked'] = 1;
     }
-
     return $result;
   }
 
