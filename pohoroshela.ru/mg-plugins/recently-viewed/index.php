@@ -113,14 +113,14 @@ class RecentlyViewed {
 				</div>
         <div class="product-name ">
         <a href="'.$item['url'].'">'.$item["title"].'</a>
-        </div>
-        <span class="product-price">'.$item["price"].' '.$data['currency'].'</span>
-				<div ></div>';
+        </div>';
+       
+        //$block .='<span class="product-price">'.$item["price"].' '.$data['currency'].'</span><div ></div>';
       if ($item['count']==0) {
          $block .= '<a href="'.$item['url'].'" class="product-info default-btn">Подробнее</a>';
       }
       else {
-        $block .= '<a class="addToCart default-btn product-buy" href="'.SITE.'/catalog?inCartProductId='.$item['id'].'" data-item-id="'.$item['id'].'">Купить</a>';
+       // $block .= '<a class="addToCart default-btn product-buy" href="'.SITE.'/catalog?inCartProductId='.$item['id'].'" data-item-id="'.$item['id'].'">Купить</a>';
       }
         $block .='</div>
         </div></div>';

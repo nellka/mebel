@@ -86,9 +86,9 @@
                 <div id="js_left">
                     <?php filterCatalog();?>
                     <!-- Вывод каталога -->
-                    <?php if(MG::get('controller')=="controllers_product" || MG::get('controller')=="controllers_catalog") :?>
+                    <?php if(MG::get('controller')=="controllers_product" || MG::get('controller')=="controllers_catalog"||(URL::isSection('cart') || URL::isSection('order') )) {?>
                         <nav><?php layout('leftmenu'); ?></nav>
-                    <?php  endif; ?>
+                    <?php  } ?>
                     <?php if(URL::isSection(null) || URL::getClearUri()=='/contacts' || URL::getClearUri()=='/personal' || URL::getClearUri()=='/o-nas' || URL::getClearUri()=='/enter' || URL::getClearUri()=='/registration' || URL::getClearUri()=='/forgotpass' || URL::getClearUri()=='/karta-sayta' || URL::getClearUri()=='/dostavka-i-oplata') : ?>
                         <nav><?php layout('leftmenu'); ?></nav>
                     <?php  endif; ?>
@@ -162,7 +162,9 @@
                     
                     
                     <!-- Блок товаров в левой колонке -->
-                    <?php if(URL::isSection('cart') || URL::isSection('order') ) :?>
+                    <?php if(URL::isSection('cart') || URL::isSection('order') ) {
+                        
+                        /*?>
                     
                     
                   
@@ -200,7 +202,7 @@
                          
                   
                   
-                    <?php endif; ?><!-- /Блок товаров в левой колонке -->              
+                    <?php */} ?><!-- /Блок товаров в левой колонке -->              
                 </div><!-- end #js_left -->
                 
                 

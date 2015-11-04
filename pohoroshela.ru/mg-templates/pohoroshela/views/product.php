@@ -11,22 +11,19 @@ mgSEO($data);
 <div style="width:50%;float:left">    
   <?php mgGalleryProduct($data); ?>
 
-    <div class="product-details-wrapper">
-    <ul class="product-tabs">
-      <li><a href="#tab1">Описание</a></li>     
-    </ul>
-    <div class="product-tabs-container">
-      <div id="tab1" itemprop="description" style="padding: 0 20px 0 0;text-align: justify;"><?php echo $data['description'] ?></div>
-    </div>
-  </div>
-      <?      
-     if( file_exists(URL::getDocumentRoot().'/pdf/'.$data['id'].".zip")){?>
-        <a class = "vikroika_url_pr" href = "<?php echo SITE.'/pdf/'.$data['id'].".zip" ?>">Скачать выкройку</a>
-        <? }?>
 </div>
  
     <h1 class="product-title" itemprop="name"><?php echo $data['title'] ?></h1>
-        <div class="product-status">
+     </div>
+      <div id="tab1" itemprop="description" style="padding: 0 20px 0 0;text-align: justify;"><?php echo $data['description']?></div>
+       <div class="clear"></div>
+       <div class="product-status-desc">Если вы хотите <font color="Red">легко</font> и <font color="Red">без проблем</font> сшить эту модель, <br>купите <font color="Red">готовый комплект</font> для ее пошива.<br>
+       В набор входит:        
+       <div class="tk">* Ткань на выбор (3 метра стандартной ширины, цена комплекта зависит от ткани):</div>
+       </div>
+        <!-- <div class="product-status">
+       
+   
 <b>Набор для шитья:</b>
 <ul class="det"><li> инструкция
 <li> 3 метра ткани на выбор
@@ -36,7 +33,7 @@ mgSEO($data);
 <li> молнии
 <li> подарочная упаковка
 </ul>
-</div>
+</div>-->
   <div class="product-status">
     <div class="buy-block">
       <div class="buy-block-inner">
@@ -68,12 +65,15 @@ mgSEO($data);
   </div><!-- End product-status-->
 
   <div class="clear"></div>
-
-
-
-  <?php
-  /* Следующая строка для вывода свойств в таблицу характеристик */
-  /* $data['stringsProperties'] */
+<div class="product-status-desc">
+А если вы <font color="Red">уверены в своих силах</font> - можете просто <font color="Red">скачать выкройку!</font><br>
+          <?      
+     if( file_exists(URL::getDocumentRoot().'/pdf/'.$data['id'].".zip")){?>
+        <a class = "vikroika_url_pr" href = "<?php echo SITE.'/pdf/'.$data['id'].".zip" ?>">Скачать выкройку</a>
+        <? }?>
+</div>
+ <div class="clear"></div>
+  <?php /*
   ?>  
    <div class="product-details-wrapper">    
     <div class="product-tabs-container">
@@ -86,5 +86,5 @@ mgSEO($data);
 
 </div><!-- End product-details-block-->
 
-
+*/?>
 

@@ -1337,6 +1337,7 @@ class Models_Product {
                   $photo_full = ($property_data&&$property_data["image_full"])?$property_data["image_full"]:$photo;
                   $photo_title = $property_data?$property_data["description"]:"";
                   $price_from_base = ($property_data["price"]*3+300)*3;
+                  $prop_title = ($property_data&&$property_data["title"])?$property_data["title"]:$value;
                   $value = $value."#".$price_from_base."#";
                   
                   $valueArr = $this->parseMarginToProp($value);
@@ -1366,9 +1367,9 @@ class Models_Product {
                   $htmlButtonList .= '<div class="propVar"><input type="radio" name="'.
                     $property['property_id'].'#0" value="'.$value.'" '.$checked.'>'
                     .$photo_block
-                    .'<span class="label-black">'
+                    .'<span class="label-black">'.
                     //. $valueArr['name'].'<br>'
-                    .$plus.'</span></div>';
+                    $prop_title.'<br>'.$plus.'<br>за весь набор</span></div>';
                   
                   $secctionCartNoDummy[$property['property_id']][$i++] = array(
                     'value' => $value,

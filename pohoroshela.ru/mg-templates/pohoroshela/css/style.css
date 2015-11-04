@@ -12,6 +12,28 @@ nav.js_topCategory ul{display:block;margin:12px 0 0 210px}
     text-decoration: underline;
     text-transform: uppercase;
 }
+.product-status-desc {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 10px 0;
+}
+.tk{color:blue;font-size: 16px;}
+.propVar input[type="radio"] {
+    display: block;
+    height: 0;
+    opacity: 1;
+    position: relative;
+    top: 20px;
+    width: 0;
+    z-index: 9;
+}
+.propVar a.fancy-modal {
+    display: block;
+    margin: 0 0 0 22px;
+}
+.product-status .cart_form {
+    display: none;
+}
 .vikroika_url_pr{
  font-size: 20px;
   margin: 0 0 0 65px;
@@ -384,6 +406,7 @@ width:220px;float:left;margin:0 20px 18px 0;position:relative;background:#e8e8ea
 .catalog .product-wrapper{
 width:100%;
 margin-top: 0;
+background: white none repeat scroll 0 0;
 }
 .catalog .product-wrapper .product-image {
 max-width: 220px;

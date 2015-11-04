@@ -3,6 +3,7 @@
     
     $clear_url_array = explode("/",URL::getClearUri());
     $clear_url = $clear_url_array[0]?$clear_url_array[0]:$clear_url_array[1];
+    if(in_array($clear_url,array('cart') ))$clear_url = "nabory-dlya-shitya-platev";
 
     foreach ($data['categories'] as $category){ ?>
         <?php if ($category['invisible'] == "1") { continue;} ?>
